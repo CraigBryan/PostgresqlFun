@@ -4,7 +4,10 @@ expected_folder = "./expected/"
 actual_folder = "./actual/"
 
 #To add a test, add to this hash
-tests = {"testing the tester" => ["#{actual_folder}fakeFile.csv", "#{expected_folder}fakeExpectedFile.csv"]}
+tests = {
+  "Expected to pass if script is working" => ["#{actual_folder}expectedPass.csv", "#{expected_folder}expectedPass.csv"],
+  "Expected to fail if script is working" => ["#{actual_folder}expectedFail.csv", "#{expected_folder}expectedFail.csv"]
+}
 
 test_results = {}
 
