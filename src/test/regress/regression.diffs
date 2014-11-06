@@ -1,0 +1,85 @@
+*** ./expected/int4.out	Wed Apr  6 21:51:40 2005
+--- ./results/int4.out	Thu Nov  6 10:48:49 2014
+***************
+*** 144,150 ****
+  (3 rows)
+  
+  SELECT '' AS five, i.f1, i.f1 * int2 '2' AS x FROM INT4_TBL i;
+! ERROR:  integer out of range
+  SELECT '' AS five, i.f1, i.f1 * int2 '2' AS x FROM INT4_TBL i
+  WHERE abs(f1) < 1073741824;
+   five |   f1    |    x    
+--- 144,158 ----
+  (3 rows)
+  
+  SELECT '' AS five, i.f1, i.f1 * int2 '2' AS x FROM INT4_TBL i;
+!  five |     f1      |    x    
+! ------+-------------+---------
+!       |           0 |       0
+!       |      123456 |  246912
+!       |     -123456 | -246912
+!       |  2147483647 |      -2
+!       | -2147483647 |       2
+! (5 rows)
+! 
+  SELECT '' AS five, i.f1, i.f1 * int2 '2' AS x FROM INT4_TBL i
+  WHERE abs(f1) < 1073741824;
+   five |   f1    |    x    
+***************
+*** 155,161 ****
+  (3 rows)
+  
+  SELECT '' AS five, i.f1, i.f1 * int4 '2' AS x FROM INT4_TBL i;
+! ERROR:  integer out of range
+  SELECT '' AS five, i.f1, i.f1 * int4 '2' AS x FROM INT4_TBL i
+  WHERE abs(f1) < 1073741824;
+   five |   f1    |    x    
+--- 163,177 ----
+  (3 rows)
+  
+  SELECT '' AS five, i.f1, i.f1 * int4 '2' AS x FROM INT4_TBL i;
+!  five |     f1      |    x    
+! ------+-------------+---------
+!       |           0 |       0
+!       |      123456 |  246912
+!       |     -123456 | -246912
+!       |  2147483647 |      -2
+!       | -2147483647 |       2
+! (5 rows)
+! 
+  SELECT '' AS five, i.f1, i.f1 * int4 '2' AS x FROM INT4_TBL i
+  WHERE abs(f1) < 1073741824;
+   five |   f1    |    x    
+
+======================================================================
+
+*** ./expected/int8.out	Sun Dec  4 23:13:52 2005
+--- ./results/int8.out	Thu Nov  6 10:48:49 2014
+***************
+*** 64,70 ****
+  (5 rows)
+  
+  SELECT '' AS three, q1, q2, q1 * q2 AS multiply FROM INT8_TBL;
+! ERROR:  bigint out of range
+  SELECT '' AS three, q1, q2, q1 * q2 AS multiply FROM INT8_TBL
+   WHERE q1 < 1000 or (q2 > 0 and q2 < 1000);
+   three |        q1        |        q2        |      multiply      
+--- 64,78 ----
+  (5 rows)
+  
+  SELECT '' AS three, q1, q2, q1 * q2 AS multiply FROM INT8_TBL;
+!  three |        q1        |        q2         |       multiply       
+! -------+------------------+-------------------+----------------------
+!        |              123 |               456 |                56088
+!        |              123 |  4567890123456789 |   561850485185185047
+!        | 4567890123456789 |               123 |   561850485185185047
+!        | 4567890123456789 |  4567890123456789 |  4868582358072306617
+!        | 4567890123456789 | -4567890123456789 | -4868582358072306617
+! (5 rows)
+! 
+  SELECT '' AS three, q1, q2, q1 * q2 AS multiply FROM INT8_TBL
+   WHERE q1 < 1000 or (q2 > 0 and q2 < 1000);
+   three |        q1        |        q2        |      multiply      
+
+======================================================================
+

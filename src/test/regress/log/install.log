@@ -1,0 +1,341 @@
+/Applications/Xcode.app/Contents/Developer/usr/bin/make -C doc install
+mkdir /Users/katdrobnjakovic/Dev/CSI3130Project/postgresql-8.1.7/src/test/regress/./tmp_check
+mkdir /Users/katdrobnjakovic/Dev/CSI3130Project/postgresql-8.1.7/src/test/regress/./tmp_check/install
+mkdir /Users/katdrobnjakovic/Dev/CSI3130Project/postgresql-8.1.7/src/test/regress/./tmp_check/install/usr
+mkdir /Users/katdrobnjakovic/Dev/CSI3130Project/postgresql-8.1.7/src/test/regress/./tmp_check/install/usr/local
+mkdir /Users/katdrobnjakovic/Dev/CSI3130Project/postgresql-8.1.7/src/test/regress/./tmp_check/install/usr/local/pgsql
+mkdir /Users/katdrobnjakovic/Dev/CSI3130Project/postgresql-8.1.7/src/test/regress/./tmp_check/install/usr/local/pgsql/doc
+mkdir /Users/katdrobnjakovic/Dev/CSI3130Project/postgresql-8.1.7/src/test/regress/./tmp_check/install/usr/local/pgsql/doc/html
+mkdir /Users/katdrobnjakovic/Dev/CSI3130Project/postgresql-8.1.7/src/test/regress/./tmp_check/install/usr/local/pgsql/man
+mkdir /Users/katdrobnjakovic/Dev/CSI3130Project/postgresql-8.1.7/src/test/regress/./tmp_check/install/usr/local/pgsql/man/man1
+mkdir /Users/katdrobnjakovic/Dev/CSI3130Project/postgresql-8.1.7/src/test/regress/./tmp_check/install/usr/local/pgsql/man/man7
+gzip -d -c ./postgres.tar.gz | ( cd /Users/katdrobnjakovic/Dev/CSI3130Project/postgresql-8.1.7/src/test/regress/./tmp_check/install/usr/local/pgsql/doc/html && /usr/bin/tar xf - )
+for file in man1/*.1 man7/*.7 ; do \
+	  /bin/sh ../config/install-sh -c -m 644 $file /Users/katdrobnjakovic/Dev/CSI3130Project/postgresql-8.1.7/src/test/regress/./tmp_check/install/usr/local/pgsql/man/$file || exit; \
+	done
+/Applications/Xcode.app/Contents/Developer/usr/bin/make -C src install
+/bin/sh ../config/mkinstalldirs /Users/katdrobnjakovic/Dev/CSI3130Project/postgresql-8.1.7/src/test/regress/./tmp_check/install/usr/local/pgsql/lib/pgxs/src
+mkdir /Users/katdrobnjakovic/Dev/CSI3130Project/postgresql-8.1.7/src/test/regress/./tmp_check/install/usr/local/pgsql/lib
+mkdir /Users/katdrobnjakovic/Dev/CSI3130Project/postgresql-8.1.7/src/test/regress/./tmp_check/install/usr/local/pgsql/lib/pgxs
+mkdir /Users/katdrobnjakovic/Dev/CSI3130Project/postgresql-8.1.7/src/test/regress/./tmp_check/install/usr/local/pgsql/lib/pgxs/src
+/bin/sh ../config/install-sh -c -m 644 Makefile.global /Users/katdrobnjakovic/Dev/CSI3130Project/postgresql-8.1.7/src/test/regress/./tmp_check/install/usr/local/pgsql/lib/pgxs/src/Makefile.global
+/bin/sh ../config/install-sh -c -m 644 Makefile.port /Users/katdrobnjakovic/Dev/CSI3130Project/postgresql-8.1.7/src/test/regress/./tmp_check/install/usr/local/pgsql/lib/pgxs/src/Makefile.port
+/bin/sh ../config/install-sh -c -m 644 ./Makefile.shlib /Users/katdrobnjakovic/Dev/CSI3130Project/postgresql-8.1.7/src/test/regress/./tmp_check/install/usr/local/pgsql/lib/pgxs/src/Makefile.shlib
+/bin/sh ../config/install-sh -c -m 644 ./nls-global.mk /Users/katdrobnjakovic/Dev/CSI3130Project/postgresql-8.1.7/src/test/regress/./tmp_check/install/usr/local/pgsql/lib/pgxs/src/nls-global.mk
+/Applications/Xcode.app/Contents/Developer/usr/bin/make -C port install
+/bin/sh ../../config/install-sh -c -m 644  libpgport.a /Users/katdrobnjakovic/Dev/CSI3130Project/postgresql-8.1.7/src/test/regress/./tmp_check/install/usr/local/pgsql/lib
+/Applications/Xcode.app/Contents/Developer/usr/bin/make -C timezone install
+/Applications/Xcode.app/Contents/Developer/usr/bin/make -C ../../src/port all
+make[6]: Nothing to be done for `all'.
+mkdir /Users/katdrobnjakovic/Dev/CSI3130Project/postgresql-8.1.7/src/test/regress/./tmp_check/install/usr/local/pgsql/share
+./zic -d /Users/katdrobnjakovic/Dev/CSI3130Project/postgresql-8.1.7/src/test/regress/./tmp_check/install/usr/local/pgsql/share/timezone ./data/africa ./data/antarctica ./data/asia ./data/australasia ./data/europe ./data/northamerica ./data/southamerica ./data/pacificnew ./data/etcetera ./data/factory ./data/backward ./data/systemv ./data/solar87 ./data/solar88 ./data/solar89
+/Applications/Xcode.app/Contents/Developer/usr/bin/make -C backend install
+/Applications/Xcode.app/Contents/Developer/usr/bin/make -C ../../src/port all
+make[6]: Nothing to be done for `all'.
+/Applications/Xcode.app/Contents/Developer/usr/bin/make -C access all
+/Applications/Xcode.app/Contents/Developer/usr/bin/make -C common SUBSYS.o
+make[7]: `SUBSYS.o' is up to date.
+/Applications/Xcode.app/Contents/Developer/usr/bin/make -C gist SUBSYS.o
+make[7]: `SUBSYS.o' is up to date.
+/Applications/Xcode.app/Contents/Developer/usr/bin/make -C hash SUBSYS.o
+make[7]: `SUBSYS.o' is up to date.
+/Applications/Xcode.app/Contents/Developer/usr/bin/make -C heap SUBSYS.o
+make[7]: `SUBSYS.o' is up to date.
+/Applications/Xcode.app/Contents/Developer/usr/bin/make -C index SUBSYS.o
+make[7]: `SUBSYS.o' is up to date.
+/Applications/Xcode.app/Contents/Developer/usr/bin/make -C nbtree SUBSYS.o
+make[7]: `SUBSYS.o' is up to date.
+/Applications/Xcode.app/Contents/Developer/usr/bin/make -C rtree SUBSYS.o
+make[7]: `SUBSYS.o' is up to date.
+/Applications/Xcode.app/Contents/Developer/usr/bin/make -C transam SUBSYS.o
+make[7]: `SUBSYS.o' is up to date.
+/Applications/Xcode.app/Contents/Developer/usr/bin/make -C bootstrap all
+make[6]: Nothing to be done for `all'.
+/Applications/Xcode.app/Contents/Developer/usr/bin/make -C catalog all
+make[6]: Nothing to be done for `all'.
+/Applications/Xcode.app/Contents/Developer/usr/bin/make -C parser all
+make[6]: Nothing to be done for `all'.
+/Applications/Xcode.app/Contents/Developer/usr/bin/make -C commands all
+make[6]: Nothing to be done for `all'.
+/Applications/Xcode.app/Contents/Developer/usr/bin/make -C executor all
+make[6]: Nothing to be done for `all'.
+/Applications/Xcode.app/Contents/Developer/usr/bin/make -C lib all
+make[6]: Nothing to be done for `all'.
+/Applications/Xcode.app/Contents/Developer/usr/bin/make -C libpq all
+make[6]: Nothing to be done for `all'.
+/Applications/Xcode.app/Contents/Developer/usr/bin/make -C main all
+make[6]: Nothing to be done for `all'.
+/Applications/Xcode.app/Contents/Developer/usr/bin/make -C nodes all
+make[6]: Nothing to be done for `all'.
+/Applications/Xcode.app/Contents/Developer/usr/bin/make -C optimizer all
+/Applications/Xcode.app/Contents/Developer/usr/bin/make -C geqo SUBSYS.o
+make[7]: `SUBSYS.o' is up to date.
+/Applications/Xcode.app/Contents/Developer/usr/bin/make -C path SUBSYS.o
+make[7]: `SUBSYS.o' is up to date.
+/Applications/Xcode.app/Contents/Developer/usr/bin/make -C plan SUBSYS.o
+make[7]: `SUBSYS.o' is up to date.
+/Applications/Xcode.app/Contents/Developer/usr/bin/make -C prep SUBSYS.o
+make[7]: `SUBSYS.o' is up to date.
+/Applications/Xcode.app/Contents/Developer/usr/bin/make -C util SUBSYS.o
+make[7]: `SUBSYS.o' is up to date.
+/Applications/Xcode.app/Contents/Developer/usr/bin/make -C port all
+/Applications/Xcode.app/Contents/Developer/usr/bin/make -C darwin all
+make[7]: Nothing to be done for `all'.
+/Applications/Xcode.app/Contents/Developer/usr/bin/make -C postmaster all
+make[6]: Nothing to be done for `all'.
+/Applications/Xcode.app/Contents/Developer/usr/bin/make -C regex all
+make[6]: Nothing to be done for `all'.
+/Applications/Xcode.app/Contents/Developer/usr/bin/make -C rewrite all
+make[6]: Nothing to be done for `all'.
+/Applications/Xcode.app/Contents/Developer/usr/bin/make -C storage all
+/Applications/Xcode.app/Contents/Developer/usr/bin/make -C buffer SUBSYS.o
+make[7]: `SUBSYS.o' is up to date.
+/Applications/Xcode.app/Contents/Developer/usr/bin/make -C file SUBSYS.o
+make[7]: `SUBSYS.o' is up to date.
+/Applications/Xcode.app/Contents/Developer/usr/bin/make -C freespace SUBSYS.o
+make[7]: `SUBSYS.o' is up to date.
+/Applications/Xcode.app/Contents/Developer/usr/bin/make -C ipc SUBSYS.o
+make[7]: `SUBSYS.o' is up to date.
+/Applications/Xcode.app/Contents/Developer/usr/bin/make -C large_object SUBSYS.o
+make[7]: `SUBSYS.o' is up to date.
+/Applications/Xcode.app/Contents/Developer/usr/bin/make -C lmgr SUBSYS.o
+make[7]: `SUBSYS.o' is up to date.
+/Applications/Xcode.app/Contents/Developer/usr/bin/make -C page SUBSYS.o
+make[7]: `SUBSYS.o' is up to date.
+/Applications/Xcode.app/Contents/Developer/usr/bin/make -C smgr SUBSYS.o
+make[7]: `SUBSYS.o' is up to date.
+/Applications/Xcode.app/Contents/Developer/usr/bin/make -C tcop all
+make[6]: Nothing to be done for `all'.
+/Applications/Xcode.app/Contents/Developer/usr/bin/make -C utils all
+/Applications/Xcode.app/Contents/Developer/usr/bin/make -C adt SUBSYS.o
+make[7]: `SUBSYS.o' is up to date.
+/Applications/Xcode.app/Contents/Developer/usr/bin/make -C cache SUBSYS.o
+make[7]: `SUBSYS.o' is up to date.
+/Applications/Xcode.app/Contents/Developer/usr/bin/make -C error SUBSYS.o
+make[7]: `SUBSYS.o' is up to date.
+/Applications/Xcode.app/Contents/Developer/usr/bin/make -C fmgr SUBSYS.o
+make[7]: `SUBSYS.o' is up to date.
+/Applications/Xcode.app/Contents/Developer/usr/bin/make -C hash SUBSYS.o
+make[7]: `SUBSYS.o' is up to date.
+/Applications/Xcode.app/Contents/Developer/usr/bin/make -C init SUBSYS.o
+make[7]: `SUBSYS.o' is up to date.
+/Applications/Xcode.app/Contents/Developer/usr/bin/make -C mb SUBSYS.o
+make[7]: `SUBSYS.o' is up to date.
+/Applications/Xcode.app/Contents/Developer/usr/bin/make -C misc SUBSYS.o
+make[7]: `SUBSYS.o' is up to date.
+/Applications/Xcode.app/Contents/Developer/usr/bin/make -C mmgr SUBSYS.o
+make[7]: `SUBSYS.o' is up to date.
+/Applications/Xcode.app/Contents/Developer/usr/bin/make -C resowner SUBSYS.o
+make[7]: `SUBSYS.o' is up to date.
+/Applications/Xcode.app/Contents/Developer/usr/bin/make -C sort SUBSYS.o
+make[7]: `SUBSYS.o' is up to date.
+/Applications/Xcode.app/Contents/Developer/usr/bin/make -C time SUBSYS.o
+make[7]: `SUBSYS.o' is up to date.
+/Applications/Xcode.app/Contents/Developer/usr/bin/make -C ../../src/timezone all
+/Applications/Xcode.app/Contents/Developer/usr/bin/make -C ../../src/port all
+make[7]: Nothing to be done for `all'.
+mkdir /Users/katdrobnjakovic/Dev/CSI3130Project/postgresql-8.1.7/src/test/regress/./tmp_check/install/usr/local/pgsql/bin
+/bin/sh ../../config/install-sh -c  postgres /Users/katdrobnjakovic/Dev/CSI3130Project/postgresql-8.1.7/src/test/regress/./tmp_check/install/usr/local/pgsql/bin/postgres
+ln -s postgres /Users/katdrobnjakovic/Dev/CSI3130Project/postgresql-8.1.7/src/test/regress/./tmp_check/install/usr/local/pgsql/bin/postmaster
+/Applications/Xcode.app/Contents/Developer/usr/bin/make -C catalog install-data
+/bin/sh ../../../config/install-sh -c -m 644 postgres.bki         /Users/katdrobnjakovic/Dev/CSI3130Project/postgresql-8.1.7/src/test/regress/./tmp_check/install/usr/local/pgsql/share/postgres.bki
+/bin/sh ../../../config/install-sh -c -m 644 postgres.description /Users/katdrobnjakovic/Dev/CSI3130Project/postgresql-8.1.7/src/test/regress/./tmp_check/install/usr/local/pgsql/share/postgres.description
+/bin/sh ../../../config/install-sh -c -m 644 ./system_views.sql /Users/katdrobnjakovic/Dev/CSI3130Project/postgresql-8.1.7/src/test/regress/./tmp_check/install/usr/local/pgsql/share/system_views.sql
+/bin/sh ../../../config/install-sh -c -m 644 ./information_schema.sql /Users/katdrobnjakovic/Dev/CSI3130Project/postgresql-8.1.7/src/test/regress/./tmp_check/install/usr/local/pgsql/share/information_schema.sql
+/bin/sh ../../../config/install-sh -c -m 644 ./sql_features.txt /Users/katdrobnjakovic/Dev/CSI3130Project/postgresql-8.1.7/src/test/regress/./tmp_check/install/usr/local/pgsql/share/sql_features.txt
+/bin/sh ../../config/install-sh -c -m 644 ./libpq/pg_hba.conf.sample /Users/katdrobnjakovic/Dev/CSI3130Project/postgresql-8.1.7/src/test/regress/./tmp_check/install/usr/local/pgsql/share/pg_hba.conf.sample
+/bin/sh ../../config/install-sh -c -m 644 ./libpq/pg_ident.conf.sample /Users/katdrobnjakovic/Dev/CSI3130Project/postgresql-8.1.7/src/test/regress/./tmp_check/install/usr/local/pgsql/share/pg_ident.conf.sample
+/bin/sh ../../config/install-sh -c -m 644 ./utils/misc/postgresql.conf.sample /Users/katdrobnjakovic/Dev/CSI3130Project/postgresql-8.1.7/src/test/regress/./tmp_check/install/usr/local/pgsql/share/postgresql.conf.sample
+/bin/sh ../../config/install-sh -c -m 644 ./access/transam/recovery.conf.sample /Users/katdrobnjakovic/Dev/CSI3130Project/postgresql-8.1.7/src/test/regress/./tmp_check/install/usr/local/pgsql/share/recovery.conf.sample
+/Applications/Xcode.app/Contents/Developer/usr/bin/make -C backend/utils/mb/conversion_procs install
+/bin/sh ../../../../../config/install-sh -c -m 644 conversion_create.sql /Users/katdrobnjakovic/Dev/CSI3130Project/postgresql-8.1.7/src/test/regress/./tmp_check/install/usr/local/pgsql/share
+/bin/sh ../../../../../../config/install-sh -c -m 755  libascii_and_mic.0.0.so /Users/katdrobnjakovic/Dev/CSI3130Project/postgresql-8.1.7/src/test/regress/./tmp_check/install/usr/local/pgsql/lib/ascii_and_mic.so
+/bin/sh ../../../../../../config/install-sh -c -m 755  libcyrillic_and_mic.0.0.so /Users/katdrobnjakovic/Dev/CSI3130Project/postgresql-8.1.7/src/test/regress/./tmp_check/install/usr/local/pgsql/lib/cyrillic_and_mic.so
+/bin/sh ../../../../../../config/install-sh -c -m 755  libeuc_cn_and_mic.0.0.so /Users/katdrobnjakovic/Dev/CSI3130Project/postgresql-8.1.7/src/test/regress/./tmp_check/install/usr/local/pgsql/lib/euc_cn_and_mic.so
+/bin/sh ../../../../../../config/install-sh -c -m 755  libeuc_jp_and_sjis.0.0.so /Users/katdrobnjakovic/Dev/CSI3130Project/postgresql-8.1.7/src/test/regress/./tmp_check/install/usr/local/pgsql/lib/euc_jp_and_sjis.so
+/bin/sh ../../../../../../config/install-sh -c -m 755  libeuc_kr_and_mic.0.0.so /Users/katdrobnjakovic/Dev/CSI3130Project/postgresql-8.1.7/src/test/regress/./tmp_check/install/usr/local/pgsql/lib/euc_kr_and_mic.so
+/bin/sh ../../../../../../config/install-sh -c -m 755  libeuc_tw_and_big5.0.0.so /Users/katdrobnjakovic/Dev/CSI3130Project/postgresql-8.1.7/src/test/regress/./tmp_check/install/usr/local/pgsql/lib/euc_tw_and_big5.so
+/bin/sh ../../../../../../config/install-sh -c -m 755  liblatin2_and_win1250.0.0.so /Users/katdrobnjakovic/Dev/CSI3130Project/postgresql-8.1.7/src/test/regress/./tmp_check/install/usr/local/pgsql/lib/latin2_and_win1250.so
+/bin/sh ../../../../../../config/install-sh -c -m 755  liblatin_and_mic.0.0.so /Users/katdrobnjakovic/Dev/CSI3130Project/postgresql-8.1.7/src/test/regress/./tmp_check/install/usr/local/pgsql/lib/latin_and_mic.so
+/bin/sh ../../../../../../config/install-sh -c -m 755  libutf8_and_ascii.0.0.so /Users/katdrobnjakovic/Dev/CSI3130Project/postgresql-8.1.7/src/test/regress/./tmp_check/install/usr/local/pgsql/lib/utf8_and_ascii.so
+/bin/sh ../../../../../../config/install-sh -c -m 755  libutf8_and_big5.0.0.so /Users/katdrobnjakovic/Dev/CSI3130Project/postgresql-8.1.7/src/test/regress/./tmp_check/install/usr/local/pgsql/lib/utf8_and_big5.so
+/bin/sh ../../../../../../config/install-sh -c -m 755  libutf8_and_cyrillic.0.0.so /Users/katdrobnjakovic/Dev/CSI3130Project/postgresql-8.1.7/src/test/regress/./tmp_check/install/usr/local/pgsql/lib/utf8_and_cyrillic.so
+/bin/sh ../../../../../../config/install-sh -c -m 755  libutf8_and_euc_cn.0.0.so /Users/katdrobnjakovic/Dev/CSI3130Project/postgresql-8.1.7/src/test/regress/./tmp_check/install/usr/local/pgsql/lib/utf8_and_euc_cn.so
+/bin/sh ../../../../../../config/install-sh -c -m 755  libutf8_and_euc_jp.0.0.so /Users/katdrobnjakovic/Dev/CSI3130Project/postgresql-8.1.7/src/test/regress/./tmp_check/install/usr/local/pgsql/lib/utf8_and_euc_jp.so
+/bin/sh ../../../../../../config/install-sh -c -m 755  libutf8_and_euc_kr.0.0.so /Users/katdrobnjakovic/Dev/CSI3130Project/postgresql-8.1.7/src/test/regress/./tmp_check/install/usr/local/pgsql/lib/utf8_and_euc_kr.so
+/bin/sh ../../../../../../config/install-sh -c -m 755  libutf8_and_euc_tw.0.0.so /Users/katdrobnjakovic/Dev/CSI3130Project/postgresql-8.1.7/src/test/regress/./tmp_check/install/usr/local/pgsql/lib/utf8_and_euc_tw.so
+/bin/sh ../../../../../../config/install-sh -c -m 755  libutf8_and_gb18030.0.0.so /Users/katdrobnjakovic/Dev/CSI3130Project/postgresql-8.1.7/src/test/regress/./tmp_check/install/usr/local/pgsql/lib/utf8_and_gb18030.so
+/bin/sh ../../../../../../config/install-sh -c -m 755  libutf8_and_gbk.0.0.so /Users/katdrobnjakovic/Dev/CSI3130Project/postgresql-8.1.7/src/test/regress/./tmp_check/install/usr/local/pgsql/lib/utf8_and_gbk.so
+/bin/sh ../../../../../../config/install-sh -c -m 755  libutf8_and_iso8859.0.0.so /Users/katdrobnjakovic/Dev/CSI3130Project/postgresql-8.1.7/src/test/regress/./tmp_check/install/usr/local/pgsql/lib/utf8_and_iso8859.so
+/bin/sh ../../../../../../config/install-sh -c -m 755  libutf8_and_iso8859_1.0.0.so /Users/katdrobnjakovic/Dev/CSI3130Project/postgresql-8.1.7/src/test/regress/./tmp_check/install/usr/local/pgsql/lib/utf8_and_iso8859_1.so
+/bin/sh ../../../../../../config/install-sh -c -m 755  libutf8_and_johab.0.0.so /Users/katdrobnjakovic/Dev/CSI3130Project/postgresql-8.1.7/src/test/regress/./tmp_check/install/usr/local/pgsql/lib/utf8_and_johab.so
+/bin/sh ../../../../../../config/install-sh -c -m 755  libutf8_and_sjis.0.0.so /Users/katdrobnjakovic/Dev/CSI3130Project/postgresql-8.1.7/src/test/regress/./tmp_check/install/usr/local/pgsql/lib/utf8_and_sjis.so
+/bin/sh ../../../../../../config/install-sh -c -m 755  libutf8_and_win1258.0.0.so /Users/katdrobnjakovic/Dev/CSI3130Project/postgresql-8.1.7/src/test/regress/./tmp_check/install/usr/local/pgsql/lib/utf8_and_win1258.so
+/bin/sh ../../../../../../config/install-sh -c -m 755  libutf8_and_uhc.0.0.so /Users/katdrobnjakovic/Dev/CSI3130Project/postgresql-8.1.7/src/test/regress/./tmp_check/install/usr/local/pgsql/lib/utf8_and_uhc.so
+/bin/sh ../../../../../../config/install-sh -c -m 755  libutf8_and_win1250.0.0.so /Users/katdrobnjakovic/Dev/CSI3130Project/postgresql-8.1.7/src/test/regress/./tmp_check/install/usr/local/pgsql/lib/utf8_and_win1250.so
+/bin/sh ../../../../../../config/install-sh -c -m 755  libutf8_and_win1252.0.0.so /Users/katdrobnjakovic/Dev/CSI3130Project/postgresql-8.1.7/src/test/regress/./tmp_check/install/usr/local/pgsql/lib/utf8_and_win1252.so
+/bin/sh ../../../../../../config/install-sh -c -m 755  libutf8_and_win1256.0.0.so /Users/katdrobnjakovic/Dev/CSI3130Project/postgresql-8.1.7/src/test/regress/./tmp_check/install/usr/local/pgsql/lib/utf8_and_win1256.so
+/bin/sh ../../../../../../config/install-sh -c -m 755  libutf8_and_win874.0.0.so /Users/katdrobnjakovic/Dev/CSI3130Project/postgresql-8.1.7/src/test/regress/./tmp_check/install/usr/local/pgsql/lib/utf8_and_win874.so
+/Applications/Xcode.app/Contents/Developer/usr/bin/make -C include install
+mkdir /Users/katdrobnjakovic/Dev/CSI3130Project/postgresql-8.1.7/src/test/regress/./tmp_check/install/usr/local/pgsql/include
+mkdir /Users/katdrobnjakovic/Dev/CSI3130Project/postgresql-8.1.7/src/test/regress/./tmp_check/install/usr/local/pgsql/include/libpq
+mkdir /Users/katdrobnjakovic/Dev/CSI3130Project/postgresql-8.1.7/src/test/regress/./tmp_check/install/usr/local/pgsql/include/internal
+mkdir /Users/katdrobnjakovic/Dev/CSI3130Project/postgresql-8.1.7/src/test/regress/./tmp_check/install/usr/local/pgsql/include/internal/libpq
+mkdir /Users/katdrobnjakovic/Dev/CSI3130Project/postgresql-8.1.7/src/test/regress/./tmp_check/install/usr/local/pgsql/include/server
+mkdir /Users/katdrobnjakovic/Dev/CSI3130Project/postgresql-8.1.7/src/test/regress/./tmp_check/install/usr/local/pgsql/include/server/access
+mkdir /Users/katdrobnjakovic/Dev/CSI3130Project/postgresql-8.1.7/src/test/regress/./tmp_check/install/usr/local/pgsql/include/server/bootstrap
+mkdir /Users/katdrobnjakovic/Dev/CSI3130Project/postgresql-8.1.7/src/test/regress/./tmp_check/install/usr/local/pgsql/include/server/catalog
+mkdir /Users/katdrobnjakovic/Dev/CSI3130Project/postgresql-8.1.7/src/test/regress/./tmp_check/install/usr/local/pgsql/include/server/commands
+mkdir /Users/katdrobnjakovic/Dev/CSI3130Project/postgresql-8.1.7/src/test/regress/./tmp_check/install/usr/local/pgsql/include/server/executor
+mkdir /Users/katdrobnjakovic/Dev/CSI3130Project/postgresql-8.1.7/src/test/regress/./tmp_check/install/usr/local/pgsql/include/server/lib
+mkdir /Users/katdrobnjakovic/Dev/CSI3130Project/postgresql-8.1.7/src/test/regress/./tmp_check/install/usr/local/pgsql/include/server/libpq
+mkdir /Users/katdrobnjakovic/Dev/CSI3130Project/postgresql-8.1.7/src/test/regress/./tmp_check/install/usr/local/pgsql/include/server/mb
+mkdir /Users/katdrobnjakovic/Dev/CSI3130Project/postgresql-8.1.7/src/test/regress/./tmp_check/install/usr/local/pgsql/include/server/nodes
+mkdir /Users/katdrobnjakovic/Dev/CSI3130Project/postgresql-8.1.7/src/test/regress/./tmp_check/install/usr/local/pgsql/include/server/optimizer
+mkdir /Users/katdrobnjakovic/Dev/CSI3130Project/postgresql-8.1.7/src/test/regress/./tmp_check/install/usr/local/pgsql/include/server/parser
+mkdir /Users/katdrobnjakovic/Dev/CSI3130Project/postgresql-8.1.7/src/test/regress/./tmp_check/install/usr/local/pgsql/include/server/regex
+mkdir /Users/katdrobnjakovic/Dev/CSI3130Project/postgresql-8.1.7/src/test/regress/./tmp_check/install/usr/local/pgsql/include/server/rewrite
+mkdir /Users/katdrobnjakovic/Dev/CSI3130Project/postgresql-8.1.7/src/test/regress/./tmp_check/install/usr/local/pgsql/include/server/storage
+mkdir /Users/katdrobnjakovic/Dev/CSI3130Project/postgresql-8.1.7/src/test/regress/./tmp_check/install/usr/local/pgsql/include/server/tcop
+mkdir /Users/katdrobnjakovic/Dev/CSI3130Project/postgresql-8.1.7/src/test/regress/./tmp_check/install/usr/local/pgsql/include/server/utils
+mkdir /Users/katdrobnjakovic/Dev/CSI3130Project/postgresql-8.1.7/src/test/regress/./tmp_check/install/usr/local/pgsql/include/server/port
+mkdir /Users/katdrobnjakovic/Dev/CSI3130Project/postgresql-8.1.7/src/test/regress/./tmp_check/install/usr/local/pgsql/include/server/port/win32
+mkdir /Users/katdrobnjakovic/Dev/CSI3130Project/postgresql-8.1.7/src/test/regress/./tmp_check/install/usr/local/pgsql/include/server/port/win32/arpa
+mkdir /Users/katdrobnjakovic/Dev/CSI3130Project/postgresql-8.1.7/src/test/regress/./tmp_check/install/usr/local/pgsql/include/server/port/win32/netinet
+mkdir /Users/katdrobnjakovic/Dev/CSI3130Project/postgresql-8.1.7/src/test/regress/./tmp_check/install/usr/local/pgsql/include/server/port/win32/sys
+/bin/sh ../../config/install-sh -c -m 644 ./postgres_ext.h   /Users/katdrobnjakovic/Dev/CSI3130Project/postgresql-8.1.7/src/test/regress/./tmp_check/install/usr/local/pgsql/include
+/bin/sh ../../config/install-sh -c -m 644 ./libpq/libpq-fs.h /Users/katdrobnjakovic/Dev/CSI3130Project/postgresql-8.1.7/src/test/regress/./tmp_check/install/usr/local/pgsql/include/libpq
+/bin/sh ../../config/install-sh -c -m 644 pg_config.h    /Users/katdrobnjakovic/Dev/CSI3130Project/postgresql-8.1.7/src/test/regress/./tmp_check/install/usr/local/pgsql/include
+/bin/sh ../../config/install-sh -c -m 644 pg_config_os.h /Users/katdrobnjakovic/Dev/CSI3130Project/postgresql-8.1.7/src/test/regress/./tmp_check/install/usr/local/pgsql/include
+/bin/sh ../../config/install-sh -c -m 644 ./pg_config_manual.h /Users/katdrobnjakovic/Dev/CSI3130Project/postgresql-8.1.7/src/test/regress/./tmp_check/install/usr/local/pgsql/include
+/bin/sh ../../config/install-sh -c -m 644 ./c.h            /Users/katdrobnjakovic/Dev/CSI3130Project/postgresql-8.1.7/src/test/regress/./tmp_check/install/usr/local/pgsql/include/internal
+/bin/sh ../../config/install-sh -c -m 644 ./port.h         /Users/katdrobnjakovic/Dev/CSI3130Project/postgresql-8.1.7/src/test/regress/./tmp_check/install/usr/local/pgsql/include/internal
+/bin/sh ../../config/install-sh -c -m 644 ./postgres_fe.h  /Users/katdrobnjakovic/Dev/CSI3130Project/postgresql-8.1.7/src/test/regress/./tmp_check/install/usr/local/pgsql/include/internal
+/bin/sh ../../config/install-sh -c -m 644 ./libpq/pqcomm.h /Users/katdrobnjakovic/Dev/CSI3130Project/postgresql-8.1.7/src/test/regress/./tmp_check/install/usr/local/pgsql/include/internal/libpq
+/bin/sh ../../config/install-sh -c -m 644 pg_config.h    /Users/katdrobnjakovic/Dev/CSI3130Project/postgresql-8.1.7/src/test/regress/./tmp_check/install/usr/local/pgsql/include/server
+/bin/sh ../../config/install-sh -c -m 644 pg_config_os.h /Users/katdrobnjakovic/Dev/CSI3130Project/postgresql-8.1.7/src/test/regress/./tmp_check/install/usr/local/pgsql/include/server
+cp ./*.h /Users/katdrobnjakovic/Dev/CSI3130Project/postgresql-8.1.7/src/test/regress/./tmp_check/install/usr/local/pgsql/include/server/ || exit; \
+	chmod 644 /Users/katdrobnjakovic/Dev/CSI3130Project/postgresql-8.1.7/src/test/regress/./tmp_check/install/usr/local/pgsql/include/server/*.h  || exit; \
+	for dir in access bootstrap catalog commands executor lib libpq mb nodes optimizer parser regex rewrite storage tcop utils port port/win32 port/win32/arpa port/win32/netinet port/win32/sys; do \
+	  cp ./$dir/*.h /Users/katdrobnjakovic/Dev/CSI3130Project/postgresql-8.1.7/src/test/regress/./tmp_check/install/usr/local/pgsql/include/server/$dir/ || exit; \
+	  chmod 644 /Users/katdrobnjakovic/Dev/CSI3130Project/postgresql-8.1.7/src/test/regress/./tmp_check/install/usr/local/pgsql/include/server/$dir/*.h  || exit; \
+	done
+/Applications/Xcode.app/Contents/Developer/usr/bin/make -C interfaces install
+/bin/sh ../../../config/install-sh -c -m 644  libpq.a /Users/katdrobnjakovic/Dev/CSI3130Project/postgresql-8.1.7/src/test/regress/./tmp_check/install/usr/local/pgsql/lib/libpq.a
+cd /Users/katdrobnjakovic/Dev/CSI3130Project/postgresql-8.1.7/src/test/regress/./tmp_check/install/usr/local/pgsql/lib && \
+	ranlib libpq.a
+/bin/sh ../../../config/install-sh -c -m 755  libpq.4.1.dylib /Users/katdrobnjakovic/Dev/CSI3130Project/postgresql-8.1.7/src/test/regress/./tmp_check/install/usr/local/pgsql/lib/libpq.4.1.dylib
+cd /Users/katdrobnjakovic/Dev/CSI3130Project/postgresql-8.1.7/src/test/regress/./tmp_check/install/usr/local/pgsql/lib && \
+	rm -f libpq.4.dylib && \
+	ln -s libpq.4.1.dylib libpq.4.dylib
+cd /Users/katdrobnjakovic/Dev/CSI3130Project/postgresql-8.1.7/src/test/regress/./tmp_check/install/usr/local/pgsql/lib && \
+	rm -f libpq.dylib && \
+	ln -s libpq.4.1.dylib libpq.dylib
+/bin/sh ../../../config/install-sh -c -m 644 ./libpq-fe.h /Users/katdrobnjakovic/Dev/CSI3130Project/postgresql-8.1.7/src/test/regress/./tmp_check/install/usr/local/pgsql/include
+/bin/sh ../../../config/install-sh -c -m 644 ./libpq-int.h /Users/katdrobnjakovic/Dev/CSI3130Project/postgresql-8.1.7/src/test/regress/./tmp_check/install/usr/local/pgsql/include/internal
+/bin/sh ../../../config/install-sh -c -m 644 ./pqexpbuffer.h /Users/katdrobnjakovic/Dev/CSI3130Project/postgresql-8.1.7/src/test/regress/./tmp_check/install/usr/local/pgsql/include/internal
+/bin/sh ../../../config/install-sh -c -m 644 ./pg_service.conf.sample /Users/katdrobnjakovic/Dev/CSI3130Project/postgresql-8.1.7/src/test/regress/./tmp_check/install/usr/local/pgsql/share/pg_service.conf.sample
+/Applications/Xcode.app/Contents/Developer/usr/bin/make -C include install
+mkdir /Users/katdrobnjakovic/Dev/CSI3130Project/postgresql-8.1.7/src/test/regress/./tmp_check/install/usr/local/pgsql/include/informix
+mkdir /Users/katdrobnjakovic/Dev/CSI3130Project/postgresql-8.1.7/src/test/regress/./tmp_check/install/usr/local/pgsql/include/informix/esql
+for i in ecpgerrno.h ecpglib.h ecpgtype.h sqlca.h sql3types.h ecpg_informix.h pgtypes_error.h pgtypes_numeric.h pgtypes_timestamp.h pgtypes_date.h pgtypes_interval.h; do /bin/sh ../../../../config/install-sh -c -m 644 ./$i /Users/katdrobnjakovic/Dev/CSI3130Project/postgresql-8.1.7/src/test/regress/./tmp_check/install/usr/local/pgsql/include || exit; done
+for i in datetime.h decimal.h sqltypes.h sqlda.h; do /bin/sh ../../../../config/install-sh -c -m 644 ./$i /Users/katdrobnjakovic/Dev/CSI3130Project/postgresql-8.1.7/src/test/regress/./tmp_check/install/usr/local/pgsql/include/informix/esql || exit; done
+/Applications/Xcode.app/Contents/Developer/usr/bin/make -C pgtypeslib install
+/bin/sh ../../../../config/install-sh -c -m 644  libpgtypes.a /Users/katdrobnjakovic/Dev/CSI3130Project/postgresql-8.1.7/src/test/regress/./tmp_check/install/usr/local/pgsql/lib/libpgtypes.a
+cd /Users/katdrobnjakovic/Dev/CSI3130Project/postgresql-8.1.7/src/test/regress/./tmp_check/install/usr/local/pgsql/lib && \
+	ranlib libpgtypes.a
+/bin/sh ../../../../config/install-sh -c -m 755  libpgtypes.2.1.dylib /Users/katdrobnjakovic/Dev/CSI3130Project/postgresql-8.1.7/src/test/regress/./tmp_check/install/usr/local/pgsql/lib/libpgtypes.2.1.dylib
+cd /Users/katdrobnjakovic/Dev/CSI3130Project/postgresql-8.1.7/src/test/regress/./tmp_check/install/usr/local/pgsql/lib && \
+	rm -f libpgtypes.2.dylib && \
+	ln -s libpgtypes.2.1.dylib libpgtypes.2.dylib
+cd /Users/katdrobnjakovic/Dev/CSI3130Project/postgresql-8.1.7/src/test/regress/./tmp_check/install/usr/local/pgsql/lib && \
+	rm -f libpgtypes.dylib && \
+	ln -s libpgtypes.2.1.dylib libpgtypes.dylib
+/Applications/Xcode.app/Contents/Developer/usr/bin/make -C ecpglib install
+/bin/sh ../../../../config/install-sh -c -m 644  libecpg.a /Users/katdrobnjakovic/Dev/CSI3130Project/postgresql-8.1.7/src/test/regress/./tmp_check/install/usr/local/pgsql/lib/libecpg.a
+cd /Users/katdrobnjakovic/Dev/CSI3130Project/postgresql-8.1.7/src/test/regress/./tmp_check/install/usr/local/pgsql/lib && \
+	ranlib libecpg.a
+/bin/sh ../../../../config/install-sh -c -m 755  libecpg.5.1.dylib /Users/katdrobnjakovic/Dev/CSI3130Project/postgresql-8.1.7/src/test/regress/./tmp_check/install/usr/local/pgsql/lib/libecpg.5.1.dylib
+cd /Users/katdrobnjakovic/Dev/CSI3130Project/postgresql-8.1.7/src/test/regress/./tmp_check/install/usr/local/pgsql/lib && \
+	rm -f libecpg.5.dylib && \
+	ln -s libecpg.5.1.dylib libecpg.5.dylib
+cd /Users/katdrobnjakovic/Dev/CSI3130Project/postgresql-8.1.7/src/test/regress/./tmp_check/install/usr/local/pgsql/lib && \
+	rm -f libecpg.dylib && \
+	ln -s libecpg.5.1.dylib libecpg.dylib
+/Applications/Xcode.app/Contents/Developer/usr/bin/make -C compatlib install
+/bin/sh ../../../../config/install-sh -c -m 644  libecpg_compat.a /Users/katdrobnjakovic/Dev/CSI3130Project/postgresql-8.1.7/src/test/regress/./tmp_check/install/usr/local/pgsql/lib/libecpg_compat.a
+cd /Users/katdrobnjakovic/Dev/CSI3130Project/postgresql-8.1.7/src/test/regress/./tmp_check/install/usr/local/pgsql/lib && \
+	ranlib libecpg_compat.a
+/bin/sh ../../../../config/install-sh -c -m 755  libecpg_compat.2.1.dylib /Users/katdrobnjakovic/Dev/CSI3130Project/postgresql-8.1.7/src/test/regress/./tmp_check/install/usr/local/pgsql/lib/libecpg_compat.2.1.dylib
+cd /Users/katdrobnjakovic/Dev/CSI3130Project/postgresql-8.1.7/src/test/regress/./tmp_check/install/usr/local/pgsql/lib && \
+	rm -f libecpg_compat.2.dylib && \
+	ln -s libecpg_compat.2.1.dylib libecpg_compat.2.dylib
+cd /Users/katdrobnjakovic/Dev/CSI3130Project/postgresql-8.1.7/src/test/regress/./tmp_check/install/usr/local/pgsql/lib && \
+	rm -f libecpg_compat.dylib && \
+	ln -s libecpg_compat.2.1.dylib libecpg_compat.dylib
+/Applications/Xcode.app/Contents/Developer/usr/bin/make -C preproc install
+/Applications/Xcode.app/Contents/Developer/usr/bin/make -C ../../../../src/port all
+make[8]: Nothing to be done for `all'.
+/bin/sh ../../../../config/install-sh -c  ecpg /Users/katdrobnjakovic/Dev/CSI3130Project/postgresql-8.1.7/src/test/regress/./tmp_check/install/usr/local/pgsql/bin
+/Applications/Xcode.app/Contents/Developer/usr/bin/make -C bin install
+/Applications/Xcode.app/Contents/Developer/usr/bin/make -C ../../../src/interfaces/libpq all
+make[7]: Nothing to be done for `all'.
+/Applications/Xcode.app/Contents/Developer/usr/bin/make -C ../../../src/port all
+make[7]: Nothing to be done for `all'.
+/bin/sh ../../../config/install-sh -c  initdb /Users/katdrobnjakovic/Dev/CSI3130Project/postgresql-8.1.7/src/test/regress/./tmp_check/install/usr/local/pgsql/bin/initdb
+/bin/sh ../../../config/install-sh -c -m 755 ipcclean /Users/katdrobnjakovic/Dev/CSI3130Project/postgresql-8.1.7/src/test/regress/./tmp_check/install/usr/local/pgsql/bin/ipcclean
+/Applications/Xcode.app/Contents/Developer/usr/bin/make -C ../../../src/interfaces/libpq all
+make[7]: Nothing to be done for `all'.
+/Applications/Xcode.app/Contents/Developer/usr/bin/make -C ../../../src/port all
+make[7]: Nothing to be done for `all'.
+/bin/sh ../../../config/install-sh -c  pg_ctl /Users/katdrobnjakovic/Dev/CSI3130Project/postgresql-8.1.7/src/test/regress/./tmp_check/install/usr/local/pgsql/bin/pg_ctl
+/Applications/Xcode.app/Contents/Developer/usr/bin/make -C ../../../src/interfaces/libpq all
+make[7]: Nothing to be done for `all'.
+/Applications/Xcode.app/Contents/Developer/usr/bin/make -C ../../../src/port all
+make[7]: Nothing to be done for `all'.
+/Applications/Xcode.app/Contents/Developer/usr/bin/make -C ../../../src/backend/parser keywords.o
+make[7]: `keywords.o' is up to date.
+/bin/sh ../../../config/install-sh -c  pg_dump /Users/katdrobnjakovic/Dev/CSI3130Project/postgresql-8.1.7/src/test/regress/./tmp_check/install/usr/local/pgsql/bin/pg_dump
+/bin/sh ../../../config/install-sh -c  pg_restore /Users/katdrobnjakovic/Dev/CSI3130Project/postgresql-8.1.7/src/test/regress/./tmp_check/install/usr/local/pgsql/bin/pg_restore
+/bin/sh ../../../config/install-sh -c  pg_dumpall /Users/katdrobnjakovic/Dev/CSI3130Project/postgresql-8.1.7/src/test/regress/./tmp_check/install/usr/local/pgsql/bin/pg_dumpall
+/Applications/Xcode.app/Contents/Developer/usr/bin/make -C ../../../src/interfaces/libpq all
+make[7]: Nothing to be done for `all'.
+/Applications/Xcode.app/Contents/Developer/usr/bin/make -C ../../../src/port all
+make[7]: Nothing to be done for `all'.
+/bin/sh ../../../config/install-sh -c  psql /Users/katdrobnjakovic/Dev/CSI3130Project/postgresql-8.1.7/src/test/regress/./tmp_check/install/usr/local/pgsql/bin/psql
+/bin/sh ../../../config/install-sh -c -m 644 ./psqlrc.sample /Users/katdrobnjakovic/Dev/CSI3130Project/postgresql-8.1.7/src/test/regress/./tmp_check/install/usr/local/pgsql/share/psqlrc.sample
+/Applications/Xcode.app/Contents/Developer/usr/bin/make -C ../../../src/interfaces/libpq all
+make[7]: Nothing to be done for `all'.
+/Applications/Xcode.app/Contents/Developer/usr/bin/make -C ../../../src/backend/parser keywords.o
+make[7]: `keywords.o' is up to date.
+/bin/sh ../../../config/install-sh -c  createdb   /Users/katdrobnjakovic/Dev/CSI3130Project/postgresql-8.1.7/src/test/regress/./tmp_check/install/usr/local/pgsql/bin/createdb
+/bin/sh ../../../config/install-sh -c  dropdb     /Users/katdrobnjakovic/Dev/CSI3130Project/postgresql-8.1.7/src/test/regress/./tmp_check/install/usr/local/pgsql/bin/dropdb
+/bin/sh ../../../config/install-sh -c  createlang /Users/katdrobnjakovic/Dev/CSI3130Project/postgresql-8.1.7/src/test/regress/./tmp_check/install/usr/local/pgsql/bin/createlang
+/bin/sh ../../../config/install-sh -c  droplang   /Users/katdrobnjakovic/Dev/CSI3130Project/postgresql-8.1.7/src/test/regress/./tmp_check/install/usr/local/pgsql/bin/droplang
+/bin/sh ../../../config/install-sh -c  createuser /Users/katdrobnjakovic/Dev/CSI3130Project/postgresql-8.1.7/src/test/regress/./tmp_check/install/usr/local/pgsql/bin/createuser
+/bin/sh ../../../config/install-sh -c  dropuser   /Users/katdrobnjakovic/Dev/CSI3130Project/postgresql-8.1.7/src/test/regress/./tmp_check/install/usr/local/pgsql/bin/dropuser
+/bin/sh ../../../config/install-sh -c  clusterdb  /Users/katdrobnjakovic/Dev/CSI3130Project/postgresql-8.1.7/src/test/regress/./tmp_check/install/usr/local/pgsql/bin/clusterdb
+/bin/sh ../../../config/install-sh -c  vacuumdb   /Users/katdrobnjakovic/Dev/CSI3130Project/postgresql-8.1.7/src/test/regress/./tmp_check/install/usr/local/pgsql/bin/vacuumdb
+/bin/sh ../../../config/install-sh -c  reindexdb  /Users/katdrobnjakovic/Dev/CSI3130Project/postgresql-8.1.7/src/test/regress/./tmp_check/install/usr/local/pgsql/bin/reindexdb
+/Applications/Xcode.app/Contents/Developer/usr/bin/make -C ../../../src/port all
+make[7]: Nothing to be done for `all'.
+/bin/sh ../../../config/install-sh -c -m 755 pg_config /Users/katdrobnjakovic/Dev/CSI3130Project/postgresql-8.1.7/src/test/regress/./tmp_check/install/usr/local/pgsql/bin/pg_config
+/Applications/Xcode.app/Contents/Developer/usr/bin/make -C ../../../src/port all
+make[7]: Nothing to be done for `all'.
+/bin/sh ../../../config/install-sh -c  pg_controldata /Users/katdrobnjakovic/Dev/CSI3130Project/postgresql-8.1.7/src/test/regress/./tmp_check/install/usr/local/pgsql/bin/pg_controldata
+/Applications/Xcode.app/Contents/Developer/usr/bin/make -C ../../../src/port all
+make[7]: Nothing to be done for `all'.
+/bin/sh ../../../config/install-sh -c  pg_resetxlog /Users/katdrobnjakovic/Dev/CSI3130Project/postgresql-8.1.7/src/test/regress/./tmp_check/install/usr/local/pgsql/bin/pg_resetxlog
+/Applications/Xcode.app/Contents/Developer/usr/bin/make -C pl install
+/Applications/Xcode.app/Contents/Developer/usr/bin/make -C src install
+/bin/sh ../../../../config/install-sh -c -m 755  libplpgsql.1.0.so /Users/katdrobnjakovic/Dev/CSI3130Project/postgresql-8.1.7/src/test/regress/./tmp_check/install/usr/local/pgsql/lib/plpgsql.so
+/Applications/Xcode.app/Contents/Developer/usr/bin/make -C makefiles install
+mkdir /Users/katdrobnjakovic/Dev/CSI3130Project/postgresql-8.1.7/src/test/regress/./tmp_check/install/usr/local/pgsql/lib/pgxs/src/makefiles
+/bin/sh ../../config/install-sh -c -m 644 ./pgxs.mk /Users/katdrobnjakovic/Dev/CSI3130Project/postgresql-8.1.7/src/test/regress/./tmp_check/install/usr/local/pgsql/lib/pgxs/src/makefiles/
+/Applications/Xcode.app/Contents/Developer/usr/bin/make -C utils install
+make[5]: Nothing to be done for `install'.
+/Applications/Xcode.app/Contents/Developer/usr/bin/make -C config install
+mkdir /Users/katdrobnjakovic/Dev/CSI3130Project/postgresql-8.1.7/src/test/regress/./tmp_check/install/usr/local/pgsql/lib/pgxs/config
+/bin/sh ../config/install-sh -c -m 755 ./install-sh /Users/katdrobnjakovic/Dev/CSI3130Project/postgresql-8.1.7/src/test/regress/./tmp_check/install/usr/local/pgsql/lib/pgxs/config/install-sh
+/bin/sh ../config/install-sh -c -m 755 ./mkinstalldirs /Users/katdrobnjakovic/Dev/CSI3130Project/postgresql-8.1.7/src/test/regress/./tmp_check/install/usr/local/pgsql/lib/pgxs/config/mkinstalldirs
+PostgreSQL installation complete.
