@@ -57,4 +57,11 @@ ON table3.country = table4.country AND table3.name = table4.name;
 
 SELECT table3.id, table3.startDate, table3.dateOfBirth, table5.id, table5.endDate, table5.dateOfBirth
 FROM table3
-INNER JOIN table3.id = table5.id AND table3.dateOfBirth = table3.dateOfBirth AND table3.startDate = table5.endDate;
+INNER JOIN table5
+ON table3.id = table5.id AND table3.dateOfBirth = table3.dateOfBirth AND table3.startDate = table5.endDate;
+
+
+SELECT table3.id, table3.startDate, table3.dateOfBirth, table5.id, table5.endDate, table5.dateOfBirth
+FROM table3
+INNER JOIN table5
+ON table3.id = table5.id OR table3.dateOfBirth = table3.dateOfBirth OR table3.startDate = table5.endDate;
