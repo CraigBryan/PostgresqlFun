@@ -1,31 +1,40 @@
 #!/bin/bash
 
+#this script expects a postgres server to be running on port 55432
 echo Running Tests
 
-#disables the other join types (Kat, check the file path and make sure these exist after you install postgresql)
-sudo sed -i -e 's/enable_mergejoin = on/enable_mergejoin = off/g' /etc/postgresql/8.1/main/postgresql.conf
-sudo sed -i -e 's/enable_nestloop = on/enable_nestloop = off/g' /etc/postgresql/8.1/main/postgresql.conf
-#TODO cd back to proper folder! (Kat, I don't know where yours is)
+bindir="../postgresql-8.1.7/src/test/regress/tmp_check/install/usr/local/pgsql/bin"
+libdir="../postgresql-8.1.7/src/test/regress/tmp_check/install/usr/local/pgsql/lib"
+port="55432"
 
-#TODO add some postgres configuration garbage to switch to psql 8.1
-  #edit system psql conf file
-  #may require making a cluster with pg_ctl?
+# ----------
+# Set up shared library paths, needed by psql
+# Ripped from pg_regress
+# ----------
 
-sudo service restart postgresql
+    if [ -n "$LD_LIBRARY_PATH" ]; then
+        LD_LIBRARY_PATH="$libdir:$LD_LIBRARY_PATH"
+    else
+        LD_LIBRARY_PATH=$libdir
+    fi
+    export LD_LIBRARY_PATH
 
-#TODO create appropriate db (or maybe this has to already exist)
-  #This may happen within the sql. See http://www.postgresql.org/docs/9.0/static/sql-createdatabase.html
-  #Actually, probably HAS to happen within the sql
-  #possibly use initdb?
+    if [ -n "$DYLD_LIBRARY_PATH" ]; then
+        DYLD_LIBRARY_PATH="$libdir:$DYLD_LIBRARY_PATH"
+    else
+        DYLD_LIBRARY_PATH=$libdir
+    fi
+    export DYLD_LIBRARY_PATH
+
+#disables the other join types 
+sed -i -e 's/enable_mergejoin = on/enable_mergejoin = off/g' ../postgresql-8.1.7/src/test/regress/tmp_check/data/postgresql.conf
+sed -i -e 's/enable_nestloop = on/enable_nestloop = off/g' ../postgresql-8.1.7/src/test/regress/tmp_check/data/postgresql.conf
+
+"${bindir}/createdb" -p $port testdb
 
 #runs the test sql, assuming the database is called "testdb"
-psql -d testdb -a -f testcase_sql.sql
+"${bindir}/psql" -p $port -d testdb -a -f testcase_sql.sql
 
 ruby check_results.rb 
 
-dropdb testdb
-
-#TODO cleanup
-  #switch db back
-    #edit system psql conf file
-    #restart psql server(s)
+"${bindir}/dropdb" -p $port testdb
