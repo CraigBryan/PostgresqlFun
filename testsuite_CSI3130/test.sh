@@ -32,8 +32,18 @@ sed -i -e 's/enable_nestloop = on/enable_nestloop = off/g' ../postgresql-8.1.7/s
 
 "${bindir}/createdb" -p $port testdb
 
-#runs the test sql, assuming the database is called "testdb"
+#runs the test sql
 "${bindir}/psql" -p $port -d testdb -a -f testcase_sql.sql
+
+#Copy the resulting tables to files
+"${bindir}/psql"  -c "\\copy results1 TO '${PWD}/actual/tc1.csv' CSV DELIMITER ',' HEADER" -p $port -d testdb -a
+"${bindir}/psql"  -c "\\copy results2 TO '${PWD}/actual/tc2.csv' CSV DELIMITER ',' HEADER" -p $port -d testdb -a
+"${bindir}/psql"  -c "\\copy results3 TO '${PWD}/actual/tc3.csv' CSV DELIMITER ',' HEADER" -p $port -d testdb -a
+"${bindir}/psql"  -c "\\copy results4 TO '${PWD}/actual/tc4.csv' CSV DELIMITER ',' HEADER" -p $port -d testdb -a
+"${bindir}/psql"  -c "\\copy results5 TO '${PWD}/actual/tc5.csv' CSV DELIMITER ',' HEADER" -p $port -d testdb -a
+"${bindir}/psql"  -c "\\copy results6 TO '${PWD}/actual/tc6.csv' CSV DELIMITER ',' HEADER" -p $port -d testdb -a
+"${bindir}/psql"  -c "\\copy results7 TO '${PWD}/actual/tc7.csv' CSV DELIMITER ',' HEADER" -p $port -d testdb -a
+#"${bindir}/psql"  -c "\\copy results8 TO '${PWD}/actual/tc3.csv' CSV DELIMITER ',' HEADER" -p $port -d testdb -a
 
 ruby check_results.rb 
 
