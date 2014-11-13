@@ -5,15 +5,14 @@ actual_folder = "./actual/"
 
 #To add a test, add to this hash
 tests = {
-  "Expected to pass if script is working" => ["#{actual_folder}expectedPass.csv", "#{expected_folder}expectedPass.csv"],
-  "Expected to fail if script is working" => ["#{actual_folder}expectedFail.csv", "#{expected_folder}expectedFail.csv"],
   "Testcase 1" => ["#{actual_folder}tc1.csv", "#{expected_folder}tc1.csv"],
   "Testcase 2" => ["#{actual_folder}tc2.csv", "#{expected_folder}tc2.csv"],
   "Testcase 3" => ["#{actual_folder}tc3.csv", "#{expected_folder}tc3.csv"],
   "Testcase 4" => ["#{actual_folder}tc4.csv", "#{expected_folder}tc4.csv"],
   "Testcase 5" => ["#{actual_folder}tc5.csv", "#{expected_folder}tc5.csv"],
   "Testcase 6" => ["#{actual_folder}tc6.csv", "#{expected_folder}tc6.csv"],
-  "Testcase 7" => ["#{actual_folder}tc7.csv", "#{expected_folder}tc7.csv"]
+  "Testcase 7" => ["#{actual_folder}tc7.csv", "#{expected_folder}tc7.csv"],
+  "TA's TEST" => ["#{actual_folder}tcTA.csv", "#{expected_folder}tcTA.csv"]
 }
 
 test_results = {}

@@ -8,3 +8,7 @@ cd ../postgresql-8.1.7/src/test/regress
 postmaster_pid=$(cat postmaster_pid.txt) 
 kill $postmaster_pid
 rm postmaster_pid.txt
+
+cd ../../../../testsuite_CSI3130
+
+rm ./actual/*
