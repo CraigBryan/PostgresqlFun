@@ -1,22 +1,7 @@
 # compiled sources #
 *.o
-*.s0
+*.so
 *.so.*
 
-# unrelated folders #
-./postgresql-8.1.7/config/*
-./postgresql-8.1.7/contrib/*
-./postgresql-8.1.7/doc/*
-
-# Unrelated src folders #
-./postgresql-8.1.7/src/bin/*
-./postgresql-8.1.7/src/interfaces/*
-./postgresql-8.1.7/src/makefiles/*
-./postgresql-8.1.7/src/pl/*
-./postgresql-8.1.7/src/port/*
-./postgresql-8.1.7/src/template/*
-./postgresql-8.1.7/src/test/*
-./postgresql-8.1.7/src/timezone/*
-./postgresql-8.1.7/src/tools/*
-./postgresql-8.1.7/src/tutorial/*
-./postgresql-8.1.7/src/utils/*
+postgresql-8.1.7/src/test/**
+postgresql-8.1.7/configure.lineno
