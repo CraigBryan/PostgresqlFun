@@ -1109,6 +1109,16 @@ typedef struct MergeJoinState
 typedef struct HashJoinTupleData *HashJoinTuple;
 typedef struct HashJoinTableData *HashJoinTable;
 
+/*
+ * CSI3130 
+ * Craig Bryan 6965144
+ * Crawford McAlpine STUDENT NUMBER
+ * This struct contains the state of a hashjoin during execution
+ * TODO Analyze
+ * TODO Modify
+ * TODO Document changes
+ */
+
 typedef struct HashJoinState
 {
 	JoinState	js;				/* its first field is NodeTag */

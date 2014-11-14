@@ -606,6 +606,11 @@ ExecHashJoinOuterGetTuple(PlanState *outerNode,
  * Returns the number of the new batch (1..nbatch-1), or nbatch if no more.
  * We will never return a batch number that has an empty outer batch file.
  */
+
+ /*
+ * CSI3130
+ * Batch stuff that can probably be commented out
+ */
 static int
 ExecHashJoinNewBatch(HashJoinState *hjstate)
 {

@@ -1438,6 +1438,12 @@ create_mergejoin_plan(PlannerInfo *root,
 	return join_plan;
 }
 
+/*
+ * CSI3130
+ * Code of interest?
+ *
+ */
+
 static HashJoin *
 create_hashjoin_plan(PlannerInfo *root,
 					 HashPath *best_path,
@@ -2086,6 +2092,10 @@ make_nestloop(List *tlist,
 	return node;
 }
 
+/*
+ * CSI3130
+ * Code of interest?
+ */
 static HashJoin *
 make_hashjoin(List *tlist,
 			  List *joinclauses,
@@ -2110,6 +2120,10 @@ make_hashjoin(List *tlist,
 	return node;
 }
 
+/*
+ * CSI3130
+ * Code of interest?
+ */
 static Hash *
 make_hash(Plan *lefttree)
 {

@@ -40,6 +40,11 @@ static void ExecHashIncreaseNumBatches(HashJoinTable hashtable);
  *		stub for pro forma compliance
  * ----------------------------------------------------------------
  */
+
+/*
+ * CSI3130
+ * This is the code refered to by the second bullet of the problem statement
+ */
 TupleTableSlot *
 ExecHash(HashState *node)
 {
@@ -459,6 +464,11 @@ ExecHashTableDestroy(HashJoinTable hashtable)
  *		increase the original number of batches in order to reduce
  *		current memory consumption
  */
+
+/*
+ * CSI3130
+ * Batch stuff that can probably be commented out
+ */
 static void
 ExecHashIncreaseNumBatches(HashJoinTable hashtable)
 {
@@ -606,6 +616,12 @@ ExecHashTableInsert(HashJoinTable hashtable,
 	/*
 	 * decide whether to put the tuple in the hash table or a temp file
 	 */
+
+	/*
+	 * CSI3130
+	 * Batch control structure we can remove
+	 * Only need the code within the "if"
+	 */
 	if (batchno == hashtable->curbatch)
 	{
 		/*
@@ -720,6 +736,12 @@ ExecHashGetHashValue(HashJoinTable hashtable,
  *
  * nbatch is always a power of 2; we increase it only by doubling it.  This
  * effectively adds one more bit to the top of the batchno.
+ */
+
+/*
+ * CSI3130
+ * Batch stuff that can probably be commented out
+ * May need the "bucket" part of this function
  */
 void
 ExecHashGetBucketAndBatch(HashJoinTable hashtable,
