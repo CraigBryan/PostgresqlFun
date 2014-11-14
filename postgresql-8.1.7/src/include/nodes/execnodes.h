@@ -1112,7 +1112,7 @@ typedef struct HashJoinTableData *HashJoinTable;
 /*
  * CSI3130 
  * Craig Bryan 6965144
- * Crawford McAlpine STUDENT NUMBER
+ * Crawford McAlpine 6925045
  * This struct contains the state of a hashjoin during execution
  * TODO Analyze
  * TODO Modify
