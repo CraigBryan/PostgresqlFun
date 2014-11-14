@@ -326,7 +326,7 @@ configure: failed program was:
 configure:4945: result: no
 configure:4958: checking for setproctitle in -lutil
 configure:4988: gcc -o conftest -O2 -Wall -Wmissing-prototypes -Wpointer-arith -Winline -Wdeclaration-after-statement -Wendif-labels -fno-strict-aliasing -D_GNU_SOURCE    conftest.c -lutil   >&5
-/tmp/ccZA2WuH.o: In function `main':
+/tmp/ccMtHYTK.o: In function `main':
 conftest.c:(.text.startup+0x7): undefined reference to `setproctitle'
 collect2: error: ld returned 1 exit status
 configure:4994: $? = 1
@@ -760,7 +760,7 @@ configure: failed program was:
 configure:6167: result: no
 configure:6178: checking for library containing crypt
 configure:6208: gcc -o conftest -O2 -Wall -Wmissing-prototypes -Wpointer-arith -Winline -Wdeclaration-after-statement -Wendif-labels -fno-strict-aliasing -D_GNU_SOURCE    conftest.c -lresolv -lnsl -ldl -lm  >&5
-/tmp/ccRcGcaw.o: In function `main':
+/tmp/ccWrzcsD.o: In function `main':
 conftest.c:(.text.startup+0x7): undefined reference to `crypt'
 collect2: error: ld returned 1 exit status
 configure:6214: $? = 1
@@ -3691,8 +3691,8 @@ configure:13728: $? = 0
 configure:13740: result: yes
 configure:13652: checking for getpeereid
 configure:13709: gcc -o conftest -O2 -Wall -Wmissing-prototypes -Wpointer-arith -Winline -Wdeclaration-after-statement -Wendif-labels -fno-strict-aliasing -D_GNU_SOURCE    conftest.c -lz -lreadline -lcrypt -lresolv -lnsl -ldl -lm  >&5
-/tmp/ccbID3po.o:(.data+0x0): undefined reference to `getpeereid'
-/tmp/ccbID3po.o: In function `main':
+/tmp/cctCqWKC.o:(.data+0x0): undefined reference to `getpeereid'
+/tmp/cctCqWKC.o: In function `main':
 conftest.c:(.text.startup+0x9): undefined reference to `getpeereid'
 collect2: error: ld returned 1 exit status
 configure:13715: $? = 1
@@ -3836,8 +3836,8 @@ configure:13728: $? = 0
 configure:13740: result: yes
 configure:13652: checking for pstat
 configure:13709: gcc -o conftest -O2 -Wall -Wmissing-prototypes -Wpointer-arith -Winline -Wdeclaration-after-statement -Wendif-labels -fno-strict-aliasing -D_GNU_SOURCE    conftest.c -lz -lreadline -lcrypt -lresolv -lnsl -ldl -lm  >&5
-/tmp/cc4gGThD.o:(.data+0x0): undefined reference to `pstat'
-/tmp/cc4gGThD.o: In function `main':
+/tmp/ccDziGXQ.o:(.data+0x0): undefined reference to `pstat'
+/tmp/ccDziGXQ.o: In function `main':
 conftest.c:(.text.startup+0x9): undefined reference to `pstat'
 collect2: error: ld returned 1 exit status
 configure:13715: $? = 1
@@ -3973,8 +3973,8 @@ configure:13728: $? = 0
 configure:13740: result: yes
 configure:13652: checking for setproctitle
 configure:13709: gcc -o conftest -O2 -Wall -Wmissing-prototypes -Wpointer-arith -Winline -Wdeclaration-after-statement -Wendif-labels -fno-strict-aliasing -D_GNU_SOURCE    conftest.c -lz -lreadline -lcrypt -lresolv -lnsl -ldl -lm  >&5
-/tmp/ccyvNcqL.o:(.data+0x0): undefined reference to `setproctitle'
-/tmp/ccyvNcqL.o: In function `main':
+/tmp/ccBFG1TW.o:(.data+0x0): undefined reference to `setproctitle'
+/tmp/ccBFG1TW.o: In function `main':
 conftest.c:(.text.startup+0x9): undefined reference to `setproctitle'
 collect2: error: ld returned 1 exit status
 configure:13715: $? = 1
@@ -4575,7 +4575,7 @@ configure:15577: checking for syslog.h
 configure:15584: result: yes
 configure:15600: checking for optreset
 configure:15621: gcc -o conftest -O2 -Wall -Wmissing-prototypes -Wpointer-arith -Winline -Wdeclaration-after-statement -Wendif-labels -fno-strict-aliasing -D_GNU_SOURCE    conftest.c -lz -lreadline -lcrypt -lresolv -lnsl -ldl -lm  >&5
-/tmp/ccJsAMS9.o: In function `main':
+/tmp/ccVZQ0Bo.o: In function `main':
 conftest.c:(.text.startup+0x2): undefined reference to `optreset'
 collect2: error: ld returned 1 exit status
 configure:15627: $? = 1

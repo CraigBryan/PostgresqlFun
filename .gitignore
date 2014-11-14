@@ -6,4 +6,7 @@
 *.a
 
 # temporary installation folder #
-./postgresql-8.1.7/src/test/regress/tmp_check/**
+postgresql-8.1.7/src/test/regress/tmp_check/**
+
+# log file # 
+postgresql-8.1.7/config.log

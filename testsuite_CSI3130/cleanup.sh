@@ -9,6 +9,9 @@ postmaster_pid=$(cat postmaster_pid.txt)
 kill $postmaster_pid
 rm postmaster_pid.txt
 
-cd ../../../../testsuite_CSI3130
+cd ../../..
+make clean
+
+cd ../testsuite_CSI3130
 
 rm ./actual/*
