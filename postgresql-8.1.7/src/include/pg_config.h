@@ -67,15 +67,15 @@
 #define HAVE_CRYPT 1
 
 /* Define to 1 if you have the <crypt.h> header file. */
-/* #undef HAVE_CRYPT_H */
+#define HAVE_CRYPT_H 1
 
 /* Define to 1 if you have the declaration of `fdatasync', and to 0 if you
    don't. */
-#define HAVE_DECL_FDATASYNC 0
+#define HAVE_DECL_FDATASYNC 1
 
 /* Define to 1 if you have the declaration of `F_FULLFSYNC', and to 0 if you
    don't. */
-#define HAVE_DECL_F_FULLFSYNC 1
+#define HAVE_DECL_F_FULLFSYNC 0
 
 /* Define to 1 if you have the declaration of `snprintf', and to 0 if you
    don't. */
@@ -98,7 +98,7 @@
 /* #undef HAVE_EDITLINE_READLINE_H */
 
 /* Define to 1 if you have the <endian.h> header file. */
-/* #undef HAVE_ENDIAN_H */
+#define HAVE_ENDIAN_H 1
 
 /* Define to 1 if you have the `fcvt' function. */
 #define HAVE_FCVT 1
@@ -146,7 +146,7 @@
 #define HAVE_GETOPT_LONG 1
 
 /* Define to 1 if you have the `getpeereid' function. */
-#define HAVE_GETPEEREID 1
+/* #undef HAVE_GETPEEREID */
 
 /* Define to 1 if you have the `getpwuid_r' function. */
 /* #undef HAVE_GETPWUID_R */
@@ -173,7 +173,7 @@
 #define HAVE_INTTYPES_H 1
 
 /* Define to 1 if you have the global variable 'int optreset'. */
-#define HAVE_INT_OPTRESET 1
+/* #undef HAVE_INT_OPTRESET */
 
 /* Define to 1 if you have the global variable 'int timezone'. */
 #define HAVE_INT_TIMEZONE 
@@ -245,7 +245,7 @@
 #define HAVE_LIBM 1
 
 /* Define to 1 if you have the `nsl' library (-lnsl). */
-/* #undef HAVE_LIBNSL */
+#define HAVE_LIBNSL 1
 
 /* Define to 1 if you have the `pam' library (-lpam). */
 /* #undef HAVE_LIBPAM */
@@ -442,7 +442,7 @@
 #define HAVE_STRUCT_OPTION 1
 
 /* Define to 1 if `sa_len' is member of `struct sockaddr'. */
-#define HAVE_STRUCT_SOCKADDR_SA_LEN 1
+/* #undef HAVE_STRUCT_SOCKADDR_SA_LEN */
 
 /* Define to 1 if the system has the type `struct sockaddr_storage'. */
 #define HAVE_STRUCT_SOCKADDR_STORAGE 1
@@ -451,7 +451,7 @@
 #define HAVE_STRUCT_SOCKADDR_STORAGE_SS_FAMILY 1
 
 /* Define to 1 if `ss_len' is member of `struct sockaddr_storage'. */
-#define HAVE_STRUCT_SOCKADDR_STORAGE_SS_LEN 1
+/* #undef HAVE_STRUCT_SOCKADDR_STORAGE_SS_LEN */
 
 /* Define to 1 if `__ss_family' is member of `struct sockaddr_storage'. */
 /* #undef HAVE_STRUCT_SOCKADDR_STORAGE___SS_FAMILY */
@@ -533,7 +533,7 @@
 /* #undef HAVE_UINT8 */
 
 /* Define to 1 if the system has the type `union semun'. */
-#define HAVE_UNION_SEMUN 1
+/* #undef HAVE_UNION_SEMUN */
 
 /* Define to 1 if you have the <unistd.h> header file. */
 #define HAVE_UNISTD_H 1
@@ -603,7 +603,7 @@
 #define PG_VERSION "8.1.7"
 
 /* A string containing the version number, platform, and C compiler */
-#define PG_VERSION_STR "PostgreSQL 8.1.7 on i686-apple-darwin13.4.0, compiled by GCC Apple LLVM version 6.0 (clang-600.0.54) (based on LLVM 3.5svn)"
+#define PG_VERSION_STR "PostgreSQL 8.1.7 on x86_64-unknown-linux-gnu, compiled by GCC gcc (Ubuntu/Linaro 4.7.3-12ubuntu1) 4.7.3"
 
 /* Define to the necessary symbol if this constant uses a non-standard name on
    your system. */
@@ -639,7 +639,7 @@
 /* #undef USE_INTEGER_DATETIMES */
 
 /* Define to select named POSIX semaphores. */
-#define USE_NAMED_POSIX_SEMAPHORES 1
+/* #undef USE_NAMED_POSIX_SEMAPHORES */
 
 /* Define to 1 to build with PAM support. (--with-pam) */
 /* #undef USE_PAM */
@@ -651,7 +651,7 @@
 /* #undef USE_SSL */
 
 /* Define to select SysV-style semaphores. */
-/* #undef USE_SYSV_SEMAPHORES */
+#define USE_SYSV_SEMAPHORES 1
 
 /* Define to select SysV-style shared memory. */
 #define USE_SYSV_SHARED_MEMORY 1

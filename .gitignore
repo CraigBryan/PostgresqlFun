@@ -2,6 +2,3 @@
 *.o
 *.so
 *.so.*
-
-postgresql-8.1.7/src/test/**
-postgresql-8.1.7/configure.lineno

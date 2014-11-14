@@ -188,11 +188,11 @@ CREATE TABLE COPY_TBL (x INT, y TEXT, z INT,
 	CONSTRAINT COPY_CON
 	CHECK (x > 3 AND y <> 'check failed' AND x < 7 ));
 
-COPY COPY_TBL FROM '/Users/katdrobnjakovic/Dev/CSI3130Project/postgresql-8.1.7/src/test/regress/data/constro.data';
+COPY COPY_TBL FROM '/home/craigbryan/dev/postgres/PostgresqlFun/postgresql-8.1.7/src/test/regress/data/constro.data';
 
 SELECT '' AS two, * FROM COPY_TBL;
 
-COPY COPY_TBL FROM '/Users/katdrobnjakovic/Dev/CSI3130Project/postgresql-8.1.7/src/test/regress/data/constrf.data';
+COPY COPY_TBL FROM '/home/craigbryan/dev/postgres/PostgresqlFun/postgresql-8.1.7/src/test/regress/data/constrf.data';
 
 SELECT * FROM COPY_TBL;
 

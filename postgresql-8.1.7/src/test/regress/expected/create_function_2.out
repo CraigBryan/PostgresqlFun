@@ -29,29 +29,29 @@ CREATE FUNCTION user_relns()
    LANGUAGE 'sql';
 CREATE FUNCTION pt_in_widget(point, widget)
    RETURNS bool
-   AS '/Users/katdrobnjakovic/Dev/CSI3130Project/postgresql-8.1.7/src/test/regress/regress.so'
+   AS '/home/craigbryan/dev/postgres/PostgresqlFun/postgresql-8.1.7/src/test/regress/regress.so'
    LANGUAGE 'C';
 CREATE FUNCTION overpaid(emp)
    RETURNS bool
-   AS '/Users/katdrobnjakovic/Dev/CSI3130Project/postgresql-8.1.7/src/test/regress/regress.so'
+   AS '/home/craigbryan/dev/postgres/PostgresqlFun/postgresql-8.1.7/src/test/regress/regress.so'
    LANGUAGE 'C';
 CREATE FUNCTION boxarea(box)
    RETURNS float8
-   AS '/Users/katdrobnjakovic/Dev/CSI3130Project/postgresql-8.1.7/src/test/regress/regress.so'
+   AS '/home/craigbryan/dev/postgres/PostgresqlFun/postgresql-8.1.7/src/test/regress/regress.so'
    LANGUAGE 'C';
 CREATE FUNCTION interpt_pp(path, path)
    RETURNS point
-   AS '/Users/katdrobnjakovic/Dev/CSI3130Project/postgresql-8.1.7/src/test/regress/regress.so'
+   AS '/home/craigbryan/dev/postgres/PostgresqlFun/postgresql-8.1.7/src/test/regress/regress.so'
    LANGUAGE 'C';
 CREATE FUNCTION reverse_name(name)
    RETURNS name
-   AS '/Users/katdrobnjakovic/Dev/CSI3130Project/postgresql-8.1.7/src/test/regress/regress.so'
+   AS '/home/craigbryan/dev/postgres/PostgresqlFun/postgresql-8.1.7/src/test/regress/regress.so'
    LANGUAGE 'c';
 CREATE FUNCTION oldstyle_length(int4, text)
    RETURNS int4
-   AS '/Users/katdrobnjakovic/Dev/CSI3130Project/postgresql-8.1.7/src/test/regress/regress.so'
+   AS '/home/craigbryan/dev/postgres/PostgresqlFun/postgresql-8.1.7/src/test/regress/regress.so'
    LANGUAGE 'c';
 --
 -- Function dynamic loading
 --
-LOAD '/Users/katdrobnjakovic/Dev/CSI3130Project/postgresql-8.1.7/src/test/regress/regress.so';
+LOAD '/home/craigbryan/dev/postgres/PostgresqlFun/postgresql-8.1.7/src/test/regress/regress.so';

@@ -1,25 +1,25 @@
 Running in noclean mode.  Mistakes will not be cleaned up.
-The files belonging to this database system will be owned by user "katdrobnjakovic".
+The files belonging to this database system will be owned by user "craigbryan".
 This user must also own the server process.
 
 The database cluster will be initialized with locale C.
 
-creating directory /Users/katdrobnjakovic/Dev/CSI3130Project/postgresql-8.1.7/src/test/regress/./tmp_check/data ... ok
-creating directory /Users/katdrobnjakovic/Dev/CSI3130Project/postgresql-8.1.7/src/test/regress/./tmp_check/data/global ... ok
-creating directory /Users/katdrobnjakovic/Dev/CSI3130Project/postgresql-8.1.7/src/test/regress/./tmp_check/data/pg_xlog ... ok
-creating directory /Users/katdrobnjakovic/Dev/CSI3130Project/postgresql-8.1.7/src/test/regress/./tmp_check/data/pg_xlog/archive_status ... ok
-creating directory /Users/katdrobnjakovic/Dev/CSI3130Project/postgresql-8.1.7/src/test/regress/./tmp_check/data/pg_clog ... ok
-creating directory /Users/katdrobnjakovic/Dev/CSI3130Project/postgresql-8.1.7/src/test/regress/./tmp_check/data/pg_subtrans ... ok
-creating directory /Users/katdrobnjakovic/Dev/CSI3130Project/postgresql-8.1.7/src/test/regress/./tmp_check/data/pg_twophase ... ok
-creating directory /Users/katdrobnjakovic/Dev/CSI3130Project/postgresql-8.1.7/src/test/regress/./tmp_check/data/pg_multixact/members ... ok
-creating directory /Users/katdrobnjakovic/Dev/CSI3130Project/postgresql-8.1.7/src/test/regress/./tmp_check/data/pg_multixact/offsets ... ok
-creating directory /Users/katdrobnjakovic/Dev/CSI3130Project/postgresql-8.1.7/src/test/regress/./tmp_check/data/base ... ok
-creating directory /Users/katdrobnjakovic/Dev/CSI3130Project/postgresql-8.1.7/src/test/regress/./tmp_check/data/base/1 ... ok
-creating directory /Users/katdrobnjakovic/Dev/CSI3130Project/postgresql-8.1.7/src/test/regress/./tmp_check/data/pg_tblspc ... ok
-selecting default max_connections ... 50
-selecting default shared_buffers ... 200
+creating directory /home/craigbryan/dev/postgres/PostgresqlFun/postgresql-8.1.7/src/test/regress/./tmp_check/data ... ok
+creating directory /home/craigbryan/dev/postgres/PostgresqlFun/postgresql-8.1.7/src/test/regress/./tmp_check/data/global ... ok
+creating directory /home/craigbryan/dev/postgres/PostgresqlFun/postgresql-8.1.7/src/test/regress/./tmp_check/data/pg_xlog ... ok
+creating directory /home/craigbryan/dev/postgres/PostgresqlFun/postgresql-8.1.7/src/test/regress/./tmp_check/data/pg_xlog/archive_status ... ok
+creating directory /home/craigbryan/dev/postgres/PostgresqlFun/postgresql-8.1.7/src/test/regress/./tmp_check/data/pg_clog ... ok
+creating directory /home/craigbryan/dev/postgres/PostgresqlFun/postgresql-8.1.7/src/test/regress/./tmp_check/data/pg_subtrans ... ok
+creating directory /home/craigbryan/dev/postgres/PostgresqlFun/postgresql-8.1.7/src/test/regress/./tmp_check/data/pg_twophase ... ok
+creating directory /home/craigbryan/dev/postgres/PostgresqlFun/postgresql-8.1.7/src/test/regress/./tmp_check/data/pg_multixact/members ... ok
+creating directory /home/craigbryan/dev/postgres/PostgresqlFun/postgresql-8.1.7/src/test/regress/./tmp_check/data/pg_multixact/offsets ... ok
+creating directory /home/craigbryan/dev/postgres/PostgresqlFun/postgresql-8.1.7/src/test/regress/./tmp_check/data/base ... ok
+creating directory /home/craigbryan/dev/postgres/PostgresqlFun/postgresql-8.1.7/src/test/regress/./tmp_check/data/base/1 ... ok
+creating directory /home/craigbryan/dev/postgres/PostgresqlFun/postgresql-8.1.7/src/test/regress/./tmp_check/data/pg_tblspc ... ok
+selecting default max_connections ... 100
+selecting default shared_buffers ... 1000
 creating configuration files ... ok
-creating template1 database in /Users/katdrobnjakovic/Dev/CSI3130Project/postgresql-8.1.7/src/test/regress/./tmp_check/data/base/1 ... ok
+creating template1 database in /home/craigbryan/dev/postgres/PostgresqlFun/postgresql-8.1.7/src/test/regress/./tmp_check/data/base/1 ... ok
 initializing pg_authid ... ok
 enabling unlimited row size for system tables ... ok
 initializing dependencies ... ok
@@ -38,7 +38,7 @@ next time you run initdb.
 
 Success. You can now start the database server using:
 
-    /Users/katdrobnjakovic/Dev/CSI3130Project/postgresql-8.1.7/src/test/regress/./tmp_check/install//usr/local/pgsql/bin/postmaster -D /Users/katdrobnjakovic/Dev/CSI3130Project/postgresql-8.1.7/src/test/regress/./tmp_check/data
+    /home/craigbryan/dev/postgres/PostgresqlFun/postgresql-8.1.7/src/test/regress/./tmp_check/install//usr/local/pgsql/bin/postmaster -D /home/craigbryan/dev/postgres/PostgresqlFun/postgresql-8.1.7/src/test/regress/./tmp_check/data
 or
-    /Users/katdrobnjakovic/Dev/CSI3130Project/postgresql-8.1.7/src/test/regress/./tmp_check/install//usr/local/pgsql/bin/pg_ctl -D /Users/katdrobnjakovic/Dev/CSI3130Project/postgresql-8.1.7/src/test/regress/./tmp_check/data -l logfile start
+    /home/craigbryan/dev/postgres/PostgresqlFun/postgresql-8.1.7/src/test/regress/./tmp_check/install//usr/local/pgsql/bin/pg_ctl -D /home/craigbryan/dev/postgres/PostgresqlFun/postgresql-8.1.7/src/test/regress/./tmp_check/data -l logfile start
 

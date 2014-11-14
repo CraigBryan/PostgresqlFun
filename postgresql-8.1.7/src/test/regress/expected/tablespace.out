@@ -1,5 +1,5 @@
 -- create a tablespace we can use
-CREATE TABLESPACE testspace LOCATION '/Users/katdrobnjakovic/Dev/CSI3130Project/postgresql-8.1.7/src/test/regress/testtablespace';
+CREATE TABLESPACE testspace LOCATION '/home/craigbryan/dev/postgres/PostgresqlFun/postgresql-8.1.7/src/test/regress/testtablespace';
 -- create a schema we can use
 CREATE SCHEMA testschema;
 -- try a table

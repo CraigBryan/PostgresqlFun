@@ -33,7 +33,7 @@ VERSION = 8.1.7
 
 # Support for VPATH builds
 vpath_build = no
-abs_top_srcdir = /Users/katdrobnjakovic/dev/csi3130project/postgresql-8.1.7/src/..
+abs_top_srcdir = /home/craigbryan/dev/postgres/PostgresqlFun/postgresql-8.1.7/src/..
 
 ifneq ($(vpath_build),yes)
 top_srcdir = $(top_builddir)
@@ -188,8 +188,8 @@ COLLATEINDEX	=
 
 # Compilers
 
-CPP = gcc -no-cpp-precomp -E
-CPPFLAGS =  
+CPP = gcc -E
+CPPFLAGS = -D_GNU_SOURCE 
 
 ifdef PGXS
 override CPPFLAGS := -I$(includedir_server) -I$(includedir_internal) $(CPPFLAGS)
@@ -200,7 +200,7 @@ override CPPFLAGS := -I$(top_builddir)/src/include $(CPPFLAGS)
 endif
 endif # not PGXS
 
-CC = gcc -no-cpp-precomp
+CC = gcc
 GCC = yes
 CFLAGS = -O2 -Wall -Wmissing-prototypes -Wpointer-arith -Winline -Wdeclaration-after-statement -Wendif-labels -fno-strict-aliasing
 
@@ -213,9 +213,9 @@ FLEXFLAGS =  $(LFLAGS)
 
 # Linking
 
-LIBS = -lz -lreadline -lresolv -ldl -lm 
-LD = /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/ld
-with_gnu_ld = no
+LIBS = -lz -lreadline -lcrypt -lresolv -lnsl -ldl -lm 
+LD = /usr/bin/ld
+with_gnu_ld = yes
 ld_R_works = 
 LDFLAGS =  
 LDFLAGS_SL = 
@@ -236,12 +236,12 @@ perl_embed_ldflags	=
 
 # Miscellaneous
 
-AWK	= awk
+AWK	= gawk
 LN_S	= ln -s
 MSGFMT  = 
 MSGMERGE = 
 PYTHON	= 
-TAR	= /usr/bin/tar
+TAR	= /bin/tar
 XGETTEXT = 
 
 GZIP	= gzip
@@ -268,8 +268,8 @@ mkinstalldirs	= $(SHELL) $(top_srcdir)/config/mkinstalldirs
 missing		= $(SHELL) $(top_srcdir)/config/missing
 
 STRIP		= strip
-STRIP_STATIC_LIB = :
-STRIP_SHARED_LIB = :
+STRIP_STATIC_LIB = strip -x
+STRIP_SHARED_LIB = strip --strip-unneeded
 
 # Documentation
 
@@ -289,11 +289,11 @@ WANTED_LANGUAGES =
 #
 
 # Name of the "template"
-PORTNAME= darwin
+PORTNAME= linux
 
-host_tuple = i686-apple-darwin13.4.0
-host_os = darwin13.4.0
-host_cpu = i686
+host_tuple = x86_64-unknown-linux-gnu
+host_os = linux-gnu
+host_cpu = x86_64
 
 # Make HAVE_IPV6 available for initdb script creation
 HAVE_IPV6= yes
@@ -303,7 +303,7 @@ HAVE_POSIX_SIGNALS= yes
 
 # This is mainly for use on FreeBSD, where we have both a.out and elf
 # systems now.  May be applicable to other systems to?
-ELF_SYSTEM= 
+ELF_SYSTEM= true
 
 # Pull in platform-specific magic
 include $(top_builddir)/src/Makefile.port

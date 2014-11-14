@@ -1,7 +1,0 @@
-DOS,'abc
-def',1
-Unix,'abc
-def',2
-Mac,'abcdef',3
-esc\ape,'a\\r\\\\
-\\nb',4
