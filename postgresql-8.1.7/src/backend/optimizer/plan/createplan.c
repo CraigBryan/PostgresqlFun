@@ -1495,12 +1495,19 @@ create_hashjoin_plan(PlannerInfo *root,
 	/*
 	 * Build the hash node and hash join node.
 	 */
+
+	/*
+	 * CSI3130 
+	 * MAKE CHANGE HERE TO HASH BOTH SIDES
+	 */
 	hash_plan = make_hash(inner_plan);
+	//hash_plan_out = make_hash(outer_plan)
 	join_plan = make_hashjoin(tlist,
 							  joinclauses,
 							  otherclauses,
 							  hashclauses,
-							  outer_plan,
+							  outer_plan, //TODO remove?
+							  //(Plan *) hash_plan_outer,
 							  (Plan *) hash_plan,
 							  best_path->jpath.jointype);
 

@@ -1,1 +1,0 @@
-/home/craigbryan/dev/postgres/PostgresqlFun/postgresql-8.1.7/src/backend/parser/parse.h

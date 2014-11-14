@@ -326,7 +326,7 @@ configure: failed program was:
 configure:4945: result: no
 configure:4958: checking for setproctitle in -lutil
 configure:4988: gcc -o conftest -O2 -Wall -Wmissing-prototypes -Wpointer-arith -Winline -Wdeclaration-after-statement -Wendif-labels -fno-strict-aliasing -D_GNU_SOURCE    conftest.c -lutil   >&5
-/tmp/cc5tGGkY.o: In function `main':
+/tmp/ccZA2WuH.o: In function `main':
 conftest.c:(.text.startup+0x7): undefined reference to `setproctitle'
 collect2: error: ld returned 1 exit status
 configure:4994: $? = 1
@@ -760,7 +760,7 @@ configure: failed program was:
 configure:6167: result: no
 configure:6178: checking for library containing crypt
 configure:6208: gcc -o conftest -O2 -Wall -Wmissing-prototypes -Wpointer-arith -Winline -Wdeclaration-after-statement -Wendif-labels -fno-strict-aliasing -D_GNU_SOURCE    conftest.c -lresolv -lnsl -ldl -lm  >&5
-/tmp/ccSAffpA.o: In function `main':
+/tmp/ccRcGcaw.o: In function `main':
 conftest.c:(.text.startup+0x7): undefined reference to `crypt'
 collect2: error: ld returned 1 exit status
 configure:6214: $? = 1
@@ -3691,8 +3691,8 @@ configure:13728: $? = 0
 configure:13740: result: yes
 configure:13652: checking for getpeereid
 configure:13709: gcc -o conftest -O2 -Wall -Wmissing-prototypes -Wpointer-arith -Winline -Wdeclaration-after-statement -Wendif-labels -fno-strict-aliasing -D_GNU_SOURCE    conftest.c -lz -lreadline -lcrypt -lresolv -lnsl -ldl -lm  >&5
-/tmp/ccSNiTGi.o:(.data+0x0): undefined reference to `getpeereid'
-/tmp/ccSNiTGi.o: In function `main':
+/tmp/ccbID3po.o:(.data+0x0): undefined reference to `getpeereid'
+/tmp/ccbID3po.o: In function `main':
 conftest.c:(.text.startup+0x9): undefined reference to `getpeereid'
 collect2: error: ld returned 1 exit status
 configure:13715: $? = 1
@@ -3836,8 +3836,8 @@ configure:13728: $? = 0
 configure:13740: result: yes
 configure:13652: checking for pstat
 configure:13709: gcc -o conftest -O2 -Wall -Wmissing-prototypes -Wpointer-arith -Winline -Wdeclaration-after-statement -Wendif-labels -fno-strict-aliasing -D_GNU_SOURCE    conftest.c -lz -lreadline -lcrypt -lresolv -lnsl -ldl -lm  >&5
-/tmp/ccbMZiru.o:(.data+0x0): undefined reference to `pstat'
-/tmp/ccbMZiru.o: In function `main':
+/tmp/cc4gGThD.o:(.data+0x0): undefined reference to `pstat'
+/tmp/cc4gGThD.o: In function `main':
 conftest.c:(.text.startup+0x9): undefined reference to `pstat'
 collect2: error: ld returned 1 exit status
 configure:13715: $? = 1
@@ -3973,8 +3973,8 @@ configure:13728: $? = 0
 configure:13740: result: yes
 configure:13652: checking for setproctitle
 configure:13709: gcc -o conftest -O2 -Wall -Wmissing-prototypes -Wpointer-arith -Winline -Wdeclaration-after-statement -Wendif-labels -fno-strict-aliasing -D_GNU_SOURCE    conftest.c -lz -lreadline -lcrypt -lresolv -lnsl -ldl -lm  >&5
-/tmp/ccctM5tC.o:(.data+0x0): undefined reference to `setproctitle'
-/tmp/ccctM5tC.o: In function `main':
+/tmp/ccyvNcqL.o:(.data+0x0): undefined reference to `setproctitle'
+/tmp/ccyvNcqL.o: In function `main':
 conftest.c:(.text.startup+0x9): undefined reference to `setproctitle'
 collect2: error: ld returned 1 exit status
 configure:13715: $? = 1
@@ -4575,7 +4575,7 @@ configure:15577: checking for syslog.h
 configure:15584: result: yes
 configure:15600: checking for optreset
 configure:15621: gcc -o conftest -O2 -Wall -Wmissing-prototypes -Wpointer-arith -Winline -Wdeclaration-after-statement -Wendif-labels -fno-strict-aliasing -D_GNU_SOURCE    conftest.c -lz -lreadline -lcrypt -lresolv -lnsl -ldl -lm  >&5
-/tmp/cc3PUHoX.o: In function `main':
+/tmp/ccJsAMS9.o: In function `main':
 conftest.c:(.text.startup+0x2): undefined reference to `optreset'
 collect2: error: ld returned 1 exit status
 configure:15627: $? = 1
@@ -5550,6 +5550,7 @@ on Gufers
 config.status:746: creating GNUmakefile
 config.status:746: creating src/Makefile.global
 config.status:849: creating src/include/pg_config.h
+config.status:1233: src/include/pg_config.h is unchanged
 config.status:1297: linking ./src/backend/port/tas/dummy.s to src/backend/port/tas.s
 config.status:1297: linking ./src/backend/port/dynloader/linux.c to src/backend/port/dynloader.c
 config.status:1297: linking ./src/backend/port/sysv_sema.c to src/backend/port/pg_sema.c

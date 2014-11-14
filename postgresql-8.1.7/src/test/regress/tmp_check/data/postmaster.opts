@@ -1,1 +1,0 @@
-/home/craigbryan/dev/postgres/PostgresqlFun/postgresql-8.1.7/src/test/regress/tmp_check/install/usr/local/pgsql/bin/postgres -D /home/craigbryan/dev/postgres/PostgresqlFun/postgresql-8.1.7/src/test/regress/./tmp_check/data -F -c listen_addresses=
