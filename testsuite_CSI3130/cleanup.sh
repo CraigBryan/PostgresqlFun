@@ -10,7 +10,7 @@ kill $postmaster_pid
 rm postmaster_pid.txt
 
 cd ../../..
-make clean
+make clean -s
 
 cd ../testsuite_CSI3130
 
