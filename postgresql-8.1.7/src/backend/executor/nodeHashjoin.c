@@ -65,7 +65,7 @@ ExecHashJoin(HashJoinState *node)
 	estate = node->js.ps.state;
 	joinqual = node->js.joinqual;
 	otherqual = node->js.ps.qual;
-	hashNode = (HashState *) innerPlanState(node);
+	hashNode = (HashState *) innerPlanState(node); //CSI 3130 Hopefully won't need this anymore
 	outerNode = outerPlanState(node);
 
 	/*

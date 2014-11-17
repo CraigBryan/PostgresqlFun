@@ -1114,9 +1114,6 @@ typedef struct HashJoinTableData *HashJoinTable;
  * Craig Bryan 6965144
  * Crawford McAlpine 6925045
  * This struct contains the state of a hashjoin during execution
- * TODO Analyze
- * TODO Modify
- * TODO Document changes
  */
 
 typedef struct HashJoinState
@@ -1137,6 +1134,14 @@ typedef struct HashJoinState
 	bool		hj_NeedNewOuter;
 	bool		hj_MatchedOuter;
 	bool		hj_OuterNotEmpty;
+
+	/*
+	 * CSI 3130
+	 * Added fields
+	 */
+	 bool 	hj_innerDepleted;
+	 bool 	hj_outerDepleted;
+	 bool 	hj_outerNext; 
 } HashJoinState;
 
 
@@ -1241,6 +1246,11 @@ typedef struct UniqueState
  *	 HashState information
  * ----------------
  */
+
+ /*
+  * CSI3130
+  * Code of interest
+  */
 typedef struct HashState
 {
 	PlanState	ps;				/* its first field is NodeTag */

@@ -1440,8 +1440,8 @@ create_mergejoin_plan(PlannerInfo *root,
 
 /*
  * CSI3130
- * Code of interest?
- *
+ * Modified so both the inner and outer relations of this join are processed 
+ * as hash nodes before the join.
  */
 static HashJoin *
 create_hashjoin_plan(PlannerInfo *root,
@@ -1498,7 +1498,8 @@ create_hashjoin_plan(PlannerInfo *root,
 
 	/*
 	 * CSI3130 
-	 * MAKE CHANGE HERE TO HASH BOTH SIDES
+	 * This was changed so that both the inner and outer plans use a 
+	 * hash node, and so the make_hashjoin gets two hash nodes.
 	 */
 	hash_plan_inner = make_hash(inner_plan);
 	hash_plan_outer = make_hash(outer_plan);

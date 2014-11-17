@@ -37,19 +37,68 @@ static void ExecHashIncreaseNumBatches(HashJoinTable hashtable);
 /* ----------------------------------------------------------------
  *		ExecHash
  *
- *		stub for pro forma compliance
+ *		CSI3130
+ *		Implemented as part of the 
  * ----------------------------------------------------------------
  */
 
 /*
  * CSI3130
- * This is the code refered to by the second bullet of the problem statement
+ * This is the code refered to by the second bullet of the problem statement.
  */
 TupleTableSlot *
 ExecHash(HashState *node)
 {
-	elog(ERROR, "Hash node does not support ExecProcNode call convention");
-	return NULL;
+	PlanState  *outerNode; 
+	List	   *hashkeys;
+	HashJoinTable hashtable;
+	TupleTableSlot *slot;
+	ExprContext *econtext;
+	uint32		hashvalue;
+
+	/* 
+	 * CSI 3130
+	 * Necessary?
+	 */
+	/* must provide our own instrumentation support */
+	if (node->ps.instrument)
+		InstrStartNode(node->ps.instrument);
+
+	/*
+	 * CSI 3130 
+	 * Get info from the hashNodeState 
+	 */
+	outerNode = outerPlanState(node);
+	hashtable = node->hashtable;
+
+	/*
+	 * CSI 3130 - pulled from multiExecHash
+	 * set expression context
+	 */
+	hashkeys = node->hashkeys;
+	econtext = node->ps.ps_ExprContext;
+
+  /*
+	 * CSI 3130 - pulled from multiExecHash
+	 * hash the next tuple and return it
+	 */
+	slot = ExecProcNode(outerNode); //CSI 3130 I am assuming this is doing the iteration through the child's tuples
+	if (TupIsNull(slot))
+		return NULL; // CSI3130 Is this the correct behaviour? Do other things need to happen?
+	hashtable->totalTuples += 1;
+	//We have to compute the hash value 
+	econtext->ecxt_innertuple = slot;
+	hashvalue = ExecHashGetHashValue(hashtable, econtext, hashkeys);
+	ExecHashTableInsert(hashtable, ExecFetchSlotTuple(slot), hashvalue);
+
+	/*
+	 * CSI 3130 - pulled from multiExecHash  
+	 * must provide our own instrumentation support 
+	 */
+	if (node->ps.instrument)
+		InstrStopNodeMulti(node->ps.instrument, hashtable->totalTuples);
+
+  return slot; //We only need to hash a tuple, then return it raw. Is this return type correct?
 }
 
 /* ----------------------------------------------------------------
@@ -120,6 +169,11 @@ MultiExecHash(HashState *node)
  *		Init routine for Hash node
  * ----------------------------------------------------------------
  */
+
+ /*
+  * CSI3130
+  * Updates to the hash state structure in execnodes.h will require changes here
+  */
 HashState *
 ExecInitHash(Hash *node, EState *estate)
 {
