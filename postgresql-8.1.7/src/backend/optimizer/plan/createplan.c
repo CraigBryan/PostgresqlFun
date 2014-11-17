@@ -1443,7 +1443,6 @@ create_mergejoin_plan(PlannerInfo *root,
  * Code of interest?
  *
  */
-
 static HashJoin *
 create_hashjoin_plan(PlannerInfo *root,
 					 HashPath *best_path,
@@ -1455,7 +1454,8 @@ create_hashjoin_plan(PlannerInfo *root,
 	List	   *otherclauses;
 	List	   *hashclauses;
 	HashJoin   *join_plan;
-	Hash	   *hash_plan;
+	Hash	   *hash_plan_inner;
+	Hash	   *hash_plan_outer;
 
 	/* Get the join qual clauses (in plain expression form) */
 	if (IS_OUTER_JOIN(best_path->jpath.jointype))
@@ -1500,15 +1500,14 @@ create_hashjoin_plan(PlannerInfo *root,
 	 * CSI3130 
 	 * MAKE CHANGE HERE TO HASH BOTH SIDES
 	 */
-	hash_plan = make_hash(inner_plan);
-	//CSI3130 hash_plan_out = make_hash(outer_plan)
+	hash_plan_inner = make_hash(inner_plan);
+	hash_plan_outer = make_hash(outer_plan);
 	join_plan = make_hashjoin(tlist,
 							  joinclauses,
 							  otherclauses,
 							  hashclauses,
-							  outer_plan, //CSI3130 TODO remove?
-							  //CSI3130 (Plan *) hash_plan_outer,
-							  (Plan *) hash_plan,
+							  (Plan *) hash_plan_outer,
+							  (Plan *) hash_plan_inner,
 							  best_path->jpath.jointype);
 
 	copy_path_costsize(&join_plan->join.plan, &best_path->jpath.path);
@@ -2102,6 +2101,7 @@ make_nestloop(List *tlist,
 /*
  * CSI3130
  * Code of interest?
+ * Craig: I don't think this needs to change because it deals with "trees" only
  */
 static HashJoin *
 make_hashjoin(List *tlist,
@@ -2130,6 +2130,7 @@ make_hashjoin(List *tlist,
 /*
  * CSI3130
  * Code of interest?
+ * Craig: I don't think this needs to change because it deals with "trees" only
  */
 static Hash *
 make_hash(Plan *lefttree)
