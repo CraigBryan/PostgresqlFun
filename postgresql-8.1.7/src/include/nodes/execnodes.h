@@ -1142,6 +1142,7 @@ typedef struct HashJoinState
 	 bool 	hj_innerDepleted;
 	 bool 	hj_outerDepleted;
 	 bool 	hj_outerNext; 
+	 TupleTableSlot hj_InnerTableSlot;
 } HashJoinState;
 
 
