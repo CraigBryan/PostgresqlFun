@@ -12,19 +12,19 @@ port="55432"
 # Ripped from pg_regress
 # ----------
 
-    if [ -n "$LD_LIBRARY_PATH" ]; then
-        LD_LIBRARY_PATH="$libdir:$LD_LIBRARY_PATH"
-    else
-        LD_LIBRARY_PATH=$libdir
-    fi
-    export LD_LIBRARY_PATH
+if [ -n "$LD_LIBRARY_PATH" ]; then
+    LD_LIBRARY_PATH="$libdir:$LD_LIBRARY_PATH"
+else
+    LD_LIBRARY_PATH=$libdir
+fi
+export LD_LIBRARY_PATH
 
-    if [ -n "$DYLD_LIBRARY_PATH" ]; then
-        DYLD_LIBRARY_PATH="$libdir:$DYLD_LIBRARY_PATH"
-    else
-        DYLD_LIBRARY_PATH=$libdir
-    fi
-    export DYLD_LIBRARY_PATH
+if [ -n "$DYLD_LIBRARY_PATH" ]; then
+    DYLD_LIBRARY_PATH="$libdir:$DYLD_LIBRARY_PATH"
+else
+    DYLD_LIBRARY_PATH=$libdir
+fi
+export DYLD_LIBRARY_PATH
 
 #disables the other join types 
 sed -i -e 's/enable_mergejoin = on/enable_mergejoin = off/g' ../postgresql-8.1.7/src/test/regress/tmp_check/data/postgresql.conf

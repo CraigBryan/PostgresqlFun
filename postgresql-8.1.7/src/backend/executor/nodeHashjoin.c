@@ -46,18 +46,19 @@ TupleTableSlot *				/* return: a tuple or NULL */
 ExecHashJoin(HashJoinState *node)
 {
 	EState	   *estate;
-	PlanState  *outerNode;
-	HashState  *hashNode;
+	HashState  *outerNode;
+	HashState  *innerNode;
 	List	   *joinqual;
 	List	   *otherqual;
-	TupleTableSlot *inntuple;
 	ExprContext *econtext;
 	ExprDoneCond isDone;
-	HashJoinTable hashtable;
+	HashJoinTable innerHashtable;
+	HashJoinTable outerHashtable;
 	HeapTuple	curtuple;
 	TupleTableSlot *outerTupleSlot;
+	TupleTableSlot *inntuple;
 	uint32		hashvalue;
-	int			batchno;
+	int			batchno; //TODO remove?
 
 	/*
 	 * get information from HashJoin node
@@ -65,14 +66,21 @@ ExecHashJoin(HashJoinState *node)
 	estate = node->js.ps.state;
 	joinqual = node->js.joinqual;
 	otherqual = node->js.ps.qual;
-	hashNode = (HashState *) innerPlanState(node); //CSI 3130 Hopefully won't need this anymore
-	outerNode = outerPlanState(node);
+	innerNode = (HashState *) innerPlanState(node);
+	outerNode = (HashState *) outerPlanState(node);
 
 	/*
 	 * get information from HashJoin state
 	 */
-	hashtable = node->hj_HashTable;
 	econtext = node->js.ps.ps_ExprContext;
+
+	/*
+	 * CSI 3130 
+	 * Get the hashtables from the children
+	 * TODO, move individually to loops, since we only need one at a time
+	 */
+	innerHashtable = innerNode->hashtable;
+	outerHashtable = outerNode->hashtable;
 
 	/*
 	 * Check to see if we're still projecting out tuples from a previous join
@@ -131,7 +139,7 @@ ExecHashJoin(HashJoinState *node)
 		 * consumption by ExecHashJoinOuterGetTuple.
 		 */
 		if (node->js.jointype == JOIN_LEFT ||
-			(outerNode->plan->startup_cost < hashNode->ps.plan->total_cost &&
+			(outerNode->plan->startup_cost < innerNode->ps.plan->total_cost &&
 			 !node->hj_OuterNotEmpty))
 		{
 			node->hj_FirstOuterTupleSlot = ExecProcNode(outerNode);
@@ -149,15 +157,15 @@ ExecHashJoin(HashJoinState *node)
 		/*
 		 * create the hash table
 		 */
-		hashtable = ExecHashTableCreate((Hash *) hashNode->ps.plan,
+		hashtable = ExecHashTableCreate((Hash *) innerNode->ps.plan,
 										node->hj_HashOperators);
 		node->hj_HashTable = hashtable;
 
 		/*
 		 * execute the Hash node, to build the hash table
 		 */
-		hashNode->hashtable = hashtable;
-		(void) MultiExecProcNode((PlanState *) hashNode);
+		innerNode->hashtable = hashtable;
+		(void) MultiExecProcNode((PlanState *) innerNode);
 
 		/*
 		 * If the inner relation is completely empty, and we're not doing an
@@ -338,8 +346,8 @@ HashJoinState *
 ExecInitHashJoin(HashJoin *node, EState *estate)
 {
 	HashJoinState *hjstate;
-	Plan	   *outerNode;
-	Hash	   *hashNode;
+	Hash	   *outerNode;
+	Hash	   *innerNode;
 	List	   *lclauses;
 	List	   *rclauses;
 	List	   *hoperators;
@@ -379,11 +387,11 @@ ExecInitHashJoin(HashJoin *node, EState *estate)
 	/*
 	 * initialize child nodes
 	 */
-	outerNode = outerPlan(node);
-	hashNode = (Hash *) innerPlan(node);
+	outerNode = (Hash *) outerPlan(node);
+	innerNode = (Hash *) innerPlan(node);
 
-	outerPlanState(hjstate) = ExecInitNode(outerNode, estate);
-	innerPlanState(hjstate) = ExecInitNode((Plan *) hashNode, estate);
+	outerPlanState(hjstate) = ExecInitNode((Plan *) outerNode, estate);
+	innerPlanState(hjstate) = ExecInitNode((Plan *) innerNode, estate);
 
 #define HASHJOIN_NSLOTS 3
 

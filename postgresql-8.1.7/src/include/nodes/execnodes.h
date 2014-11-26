@@ -1120,7 +1120,7 @@ typedef struct HashJoinState
 {
 	JoinState	js;				/* its first field is NodeTag */
 	List	   *hashclauses;	/* list of ExprState nodes */
-	HashJoinTable hj_HashTable;
+	//HashJoinTable hj_HashTable; Now unnecessary, since it handled by the children
 	uint32		hj_CurHashValue;
 	int			hj_CurBucketNo;
 	HashJoinTuple hj_CurTuple;
