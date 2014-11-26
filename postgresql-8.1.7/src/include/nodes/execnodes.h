@@ -1120,10 +1120,6 @@ typedef struct HashJoinState
 {
 	JoinState	js;				/* its first field is NodeTag */
 	List	   *hashclauses;	/* list of ExprState nodes */
-	//HashJoinTable hj_HashTable; Now unnecessary, since it handled by the children
-	uint32		hj_CurHashValue;
-	int			hj_CurBucketNo;
-	HashJoinTuple hj_CurTuple;
 	List	   *hj_OuterHashKeys;		/* list of ExprState nodes */
 	List	   *hj_InnerHashKeys;		/* list of ExprState nodes */
 	List	   *hj_HashOperators;		/* list of operator OIDs */
@@ -1139,10 +1135,19 @@ typedef struct HashJoinState
 	 * CSI 3130
 	 * Added fields
 	 */
-	 bool 	hj_innerDepleted;
-	 bool 	hj_outerDepleted;
-	 bool 	hj_outerNext; 
-	 TupleTableSlot hj_InnerTableSlot;
+	 bool 	inner_exhausted;
+	 bool 	outer_exhausted;
+	 bool 	hj_NeedNewInner; 
+	 uint32	inner_hj_CurHashValue;
+	 uint32 outer_hj_CurHashValue;
+	 int			outer_hj_CurBucketNo;
+	 int 			inner_hj_CurBucketNo;
+	 HashJoinTuple inner_hj_CurTuple;
+	 HashJoinTuple outer_hj_CurTuple;
+	 TupleTableSlot inner_hj_TableSlot;
+	 TupleTableSlot outer_hj_TableSlot;
+	 HashJoinTable hj_InnerTable;
+	 HashJoinTable hj_OuterTable;
 } HashJoinState;
 
 
