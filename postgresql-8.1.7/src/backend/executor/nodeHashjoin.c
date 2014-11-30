@@ -52,7 +52,8 @@ ExecHashJoin(HashJoinState *node)
 	List	   *otherqual;
 	ExprContext *econtext;
 	ExprDoneCond isDone;
-	HashJoinTable hashtable;
+	HashJoinTable innertable;
+	HashJoinTable outertable;
 	HeapTuple	curtuple;
 	TupleTableSlot *innerTupleSlot;
 	TupleTableSlot *outerTupleSlot;
@@ -78,9 +79,9 @@ ExecHashJoin(HashJoinState *node)
 	/*
 	 * CSI 3130 
 	 * Get the hashtables from the children
-	 * TODO, move individually to loops, since we only need one at a time
 	 */
-	hashtable = node->hashtable;
+	hashtable_inner = node->hj_InnerTable;
+	hashtable_outer = node->hj_OuterTable;
 
 	/*
 	 * Check to see if we're still projecting out tuples from a previous join
@@ -116,8 +117,8 @@ ExecHashJoin(HashJoinState *node)
 	/*
 	 * if this is the first call, build the hash table for inner relation
 	 */
-	if (hashtable == NULL)
-		//TODO check if both inner and outer tables are NULL
+	//CSI3130 Check if both tables are null
+	if (hashtable_inner == NULL && hashtable_outer == NULL)
 	{
 		/*
 		 * If the outer relation is completely empty, we can quit without
@@ -365,7 +366,7 @@ ExecHashJoin(HashJoinState *node)
 					}
 				}
 			}
-			//CSI3130 WE ARE HERE!
+
 			/*
 			 * we've got a match, but still need to test non-hashed quals
 			 */
@@ -421,9 +422,10 @@ ExecHashJoin(HashJoinState *node)
 		 * get a new outer tuple.
 		 */
 		node->hj_NeedNewOuter = true;
+		node->js.ps.ps_OuterTupleSlot=NULL;
 
 		if (!node->hj_MatchedOuter &&
-			node->js.jointype == JOIN_LEFT)
+				node->js.jointype == JOIN_LEFT)
 		{
 			/*
 			 * We are doing an outer join and there were no join matches for
@@ -734,7 +736,6 @@ ExecHashJoinOuterGetTuple(PlanState *outerNode,
 
  /*
  * CSI3130
- * Batch stuff that can probably be commented out
  */
 static int
 ExecHashJoinNewBatch(HashJoinState *hjstate)
@@ -995,9 +996,9 @@ ExecReScanHashJoin(HashJoinState *node, ExprContext *exprCtxt)
 	}
 
 	/* Always reset intra-tuple state */
-	node->hj_CurHashValue = 0;
-	node->hj_CurBucketNo = 0;
-	node->hj_CurTuple = NULL;
+	node->outer_hj_CurHashValue = 0;
+	node->inner_hj_CurBucketNo = 0;
+	node->inner_hj_CurTuple = NULL;
 
 	node->js.ps.ps_OuterTupleSlot = NULL;
 	node->js.ps.ps_TupFromTlist = false;
